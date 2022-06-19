@@ -10,13 +10,25 @@ import java.util.ArrayList;
 import java.util.Map;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
 public abstract class GenericDao<TKey,TEntity, Dao extends GenericDao<TKey, TEntity, Dao>> implements IDao<TKey, TEntity>{
-	protected abstract String getPath();
 	protected abstract TKey getKey(TEntity entity);
-	protected abstract void RemoveAllReference(TEntity entity);
-	protected Gson gs = new Gson();
+	protected abstract String getFilePath();
+	protected  String getPath() {
+		return basePath + getFilePath();
+	}
+	//protected abstract void RemoveAllReference(TEntity entity);
+	@SuppressWarnings("unused")
+	private String basePath;
+
+	public void setBasePath(String path) {
+		this.basePath = path;
+	}
+	protected Gson gs = new GsonBuilder()
+	      .setPrettyPrinting()
+	      .create();
 	
 	
 	protected void serialize(Map<TKey, TEntity> entities) {

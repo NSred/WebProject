@@ -1,0 +1,47 @@
+{
+  "1": {
+	"sportFacilityId": "1",
+    "name": "Flex",
+    "type": "GYM",
+    "facilityContent": ["Individualni treniznizi", "Grupni treninzi"],
+    "isWorikng": false,
+    "location": "BUlevar Cara Lazara 11",
+    "averageGrade": 4.4,
+    "openTime": "Jun 15, 2022, 2:36:51 AM",
+    "closeTime": "Jun 30, 2022, 2:36:51 AM"
+  },
+  "2": {
+	"sportFacilityId": "2",
+    "name": "Classic",
+    "type": "GYM",
+    "facilityContent": ["Individualni treniznizi", "Grupni treninzi"],
+    "isWorikng": false,
+    "location": "Lasla Gala 11",
+    "averageGrade": 3.4,
+    "openTime": "Jun 15, 2022, 2:36:51 AM",
+    "closeTime": "Jun 30, 2022, 2:36:51 AM"
+  },
+  "3": {
+	"sportFacilityId": "3",
+    "name": "Gladiator",
+    "type": "GYM",
+    "facilityContent": ["Individualni treniznizi", "Grupni treninzi"],
+    "isWorikng": false,
+    "location": "Fruskogorska 19 ",
+    "averageGrade": 3.4,
+    "openTime": "Jun 15, 2022, 2:36:51 AM",
+    "closeTime": "Jun 30, 2022, 2:36:51 AM"
+  },
+  "4": {
+	"sportFacilityId": "4",
+    "name": "Synergy",
+    "type": "GYM",
+    "facilityContent": ["Individualni treniznizi", "Grupni treninzi"],
+    "isWorikng": false,
+    "location": "Bulevar Evrope 33 ",
+    "averageGrade": 3.4,
+    "openTime": "Jun 15, 2022, 2:36:51 AM",
+    "closeTime": "Jun 30, 2022, 2:36:51 AM"
+  }
+
+}
