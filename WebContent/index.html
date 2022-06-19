@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Sports Facilities</title>
+    <meta charset="UTF-8" />
+    <!--  <link rel="stylesheet" type="text/css" href="styles.css" />-->
+
+    </head>
+
+    <body>
+    <div id="sportsFacilities">
+
+    <h1>{{title}}</h1>
+    <table border="1" id="tabela">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Status</th>
+                <th>Type</th>
+                <th>Location</th>
+                <th>Grade</th>
+                <!-- <th>Open</th>
+                <th>Closes</th> -->
+            </tr>
+        </thead>
+
+        <tr v-for="sf in sportFacilities">
+
+            <td>{{sf.sportFacilityId}}</td>
+            <td>{{sf.name}}</td>
+            <td>{{convertStatus(sf)}}</td>
+            <td>{{sf.type}}</td>
+            <td>{{sf.location}}</td>
+            <td>{{sf.averageGrade}}</td>
+            <!-- <td>{{sf.openTime.hour}}:{{sf.openTime.minute}}</td>
+            <td>{{sf.closeTime.hour}}:{{sf.closeTime.minute}}</td> -->
+        </tr>
+
+
+    </table>
+    </div>
+
+    <script src="js/vue.js"></script>
+    <script src="js/axios.js"></script>
+    <script src="app/sportFacilitiesShow.js"></script>
+    </body>
+
+</html>
