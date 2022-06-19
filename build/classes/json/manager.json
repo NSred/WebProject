@@ -1,0 +1,24 @@
+{
+  "mikiia": {
+    "username": "mikiia",
+    "password": "mikia",
+    "name": "marinko",
+    "surname": "marinko",
+    "birthdate": "Jun 15, 2022, 2:36:51 AM",
+    "gender": "FEMALE",
+    "userRole": "CUSTOMER",
+    "deleted": false,
+    "sportFacilityId": "123"
+  },
+  "djokaa": {
+    "username": "djokaa",
+    "password": "Djokovic",
+    "name": "Jelena",
+    "surname": "Djokovic",
+    "birthdate": "Jun 15, 2022, 2:36:51 AM",
+    "gender": "MALE",
+    "userRole": "CUSTOMER",
+    "deleted": false,
+    "sportFacilityId": "12345"
+  }
+}
