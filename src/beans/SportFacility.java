@@ -8,7 +8,7 @@ public class SportFacility {
 	private String name;
 	private FacilityType type;
 	private ArrayList<String> facilityContent;
-	private boolean isWorikng;
+	private boolean isWorking;
 	private String location;
 	private double averageGrade;
 	private Date openTime;
@@ -22,7 +22,7 @@ public class SportFacility {
 		this.name = name;
 		this.type = type;
 		this.facilityContent = facilityContent;
-		this.isWorikng = status;
+		this.isWorking = status;
 		this.location = location;
 		this.averageGrade = averageGrade;
 		this.openTime = openTime;
@@ -52,11 +52,11 @@ public class SportFacility {
 	public void setFacilityContent(ArrayList<String> facilityContent) {
 		this.facilityContent = facilityContent;
 	}
-	public boolean isWorikng() {
-		return isWorikng;
+	public boolean isWorking() {
+		return isWorking;
 	}
-	public void setWorikng(boolean status) {
-		this.isWorikng = status;
+	public void setWorking(boolean status) {
+		this.isWorking = status;
 	}
 	public String getLocation() {
 		return location;

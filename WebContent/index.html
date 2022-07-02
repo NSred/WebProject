@@ -1,13 +1,28 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <title>Sports Facilities</title>
     <meta charset="UTF-8" />
     <!--  <link rel="stylesheet" type="text/css" href="styles.css" />-->
 
     </head>
-
+    
     <body>
+    <div id="app">
+    	<router-view></router-view>
+    </div>
+
+    <script src="js/vue.js"></script>
+    <script src="js/axios.js"></script>
+    <script src="js/vue-router.js"></script>
+    <script src="app/components/SportFacilities.js"></script>
+    <script src="app/components/Registration.js"></script>
+    <script src="app/app.js"></script>
+    
+    </body>
+    
+ </html>
+
+  <!--   <body>
     <div id="sportsFacilities">
 
     <h1>{{title}}</h1>
@@ -20,8 +35,8 @@
                 <th>Type</th>
                 <th>Location</th>
                 <th>Grade</th>
-                <!-- <th>Open</th>
-                <th>Closes</th> -->
+                <th>Open</th>
+                <th>Closes</th>
             </tr>
         </thead>
 
@@ -33,8 +48,8 @@
             <td>{{sf.type}}</td>
             <td>{{sf.location}}</td>
             <td>{{sf.averageGrade}}</td>
-            <!-- <td>{{sf.openTime.hour}}:{{sf.openTime.minute}}</td>
-            <td>{{sf.closeTime.hour}}:{{sf.closeTime.minute}}</td> -->
+            <td>{{sf.openTime.hour}}:{{sf.openTime.minute}}</td>
+            <td>{{sf.closeTime.hour}}:{{sf.closeTime.minute}}</td>
         </tr>
 
 
@@ -44,6 +59,5 @@
     <script src="js/vue.js"></script>
     <script src="js/axios.js"></script>
     <script src="app/sportFacilitiesShow.js"></script>
-    </body>
+    </body> -->
 
-</html>
