@@ -1,0 +1,12 @@
+{
+	"1231234": {
+	    "username": "1231234",
+	    "password": "123123123",
+	    "name": "PROBA",
+	    "surname": "PROBA",
+	    "birthdate" : null,
+	    "gender" : "MALE",
+	    "userRole" : "COACH",
+	    "deleted": false
+  }
+}
