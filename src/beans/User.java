@@ -13,6 +13,7 @@ public class User {
 	private Gender gender;
 	private UserRole userRole;
 	private boolean deleted;
+	private boolean banned;
 	
 	
 
@@ -29,6 +30,7 @@ public class User {
 		this.gender = gender;
 		this.userRole = userRole;
 		this.deleted = false;
+		this.banned = false;
 	}
 	public User(String username, String password, String name, String surname, String birthdate, Gender gender,
 			UserRole userRole) {
@@ -40,6 +42,7 @@ public class User {
 		this.gender = gender;
 		this.userRole = userRole;
 		this.deleted = false;
+		this.banned = false;
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		Date parseDate = null;
 		try {
@@ -97,6 +100,12 @@ public class User {
 	}
 	public void setDeleted(boolean deleted) {
 		this.deleted = deleted;
+	}
+	public boolean isBanned() {
+		return banned;
+	}
+	public void setBanned(boolean banned) {
+		this.banned = banned;
 	}
 	@Override
 	public String toString() {

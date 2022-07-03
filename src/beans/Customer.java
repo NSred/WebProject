@@ -6,17 +6,18 @@ import java.util.Date;
 public class Customer extends User {
 	private ArrayList<SportFacility> visitedFacilities;
 	private CustomerType customerType;
-	private double colletedPoints;
+	private double collectedPoints;
 	private Due due;
 	
 
+	public Customer() {}
 	public Customer(String username, String password, String name, String surname, Date birthdate, Gender gender,
 			UserRole userRole) {
 		super(username, password, name, surname, birthdate, gender, userRole);
 		this.setUserRole(userRole);
 		visitedFacilities = new ArrayList<SportFacility>();
 		this.customerType = new CustomerType("BRONZE", 0, 0);
-		this.colletedPoints = 0;
+		this.collectedPoints = 0;
 
 	}
 	public Customer(String username, String password, String name, String surname, Date birthdate, Gender gender,
@@ -25,7 +26,7 @@ public class Customer extends User {
 		this.setUserRole(userRole);
 		visitedFacilities = new ArrayList<SportFacility>();
 		this.customerType = new CustomerType("BRONZE", 0, 0);
-		this.colletedPoints = 0;
+		this.collectedPoints = 0;
 		this.due = due;
 
 	}
@@ -41,11 +42,11 @@ public class Customer extends User {
 	public void setCustomerType(CustomerType customerType) {
 		this.customerType = customerType;
 	}
-	public double getColletedPoints() {
-		return colletedPoints;
+	public double getCollectedPoints() {
+		return collectedPoints;
 	}
-	public void setColletedPoints(double colletedPoints) {
-		this.colletedPoints = colletedPoints;
+	public void setCollectedPoints(double collectedPoints) {
+		this.collectedPoints = collectedPoints;
 	}
 	public Due getDue() {
 		return due;

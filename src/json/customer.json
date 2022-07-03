@@ -1,0 +1,16 @@
+{
+	"sdfsdf": {
+		"username": "sdfsdf",
+        "password": "sdfsdfsdf",
+        "name": "Nenad",
+        "surname": "Sredojevi?",
+        "birthdate": null,
+        "gender": null,
+        "userRole": null,
+        "deleted": false,
+        "visitedFacilities": null,
+        "customerType": null,
+        "collectedPoints": 0.0,
+        "due": null  
+   }
+}
