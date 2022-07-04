@@ -2,7 +2,9 @@ Vue.component("register-user", {
 	data: function(){
 		return{
 			customers: null,
-			newCustomer : {}
+			newCustomer : {username : "", password : "", name : "", surname : "", birthdate : null, gender  : null, userRole : null, deleted : false, banned : false, visitedFacilities : null, 
+						   customerType : null, collectedPoints : 0.0, due : null},
+			gender : "MALE"
 		}
 	},
 
@@ -77,8 +79,8 @@ Vue.component("register-user", {
     		<!---Gender----->
     		<div class="box radio">
           <label for="gender" class="fl fontLabel"> Gender: </label>
-    				<input type="radio" name="Gender" v-model="newCustomer.gender" value="Male" required> Male &nbsp; &nbsp; &nbsp; &nbsp;
-    				<input type="radio" name="Gender" v-model="newCustomer.gender" value="Female" required> Female
+    				<input type="radio" name="Gender" v-model="gender" value="Male" required> Male &nbsp; &nbsp; &nbsp; &nbsp;
+    				<input type="radio" name="Gender" v-model="gender" value="Female" required> Female
     		</div>
     		<!---Gender--->
 
@@ -97,9 +99,9 @@ Vue.component("register-user", {
   </div>`,
   methods : {
 		createCustomer: function(customer) {
-			var c = {name:customer.name, surname:customer.surname, username:customer.username, password:customer.password,
-					birthdate:customer.birthdate, gender:null, userRole:null, deleted:false, visitedFacilities:null,
-					customerType:null, collectedPoints:0.0}
+			var c = {username:customer.username, password:customer.password, name:customer.name, surname:customer.surname,
+					birthdate:customer.birthdate, gender:this.gender, userRole:'CUSTOMER', deleted:false, banned : false,  visitedFacilities:undefined,
+					customerType:undefined, collectedPoints:0.0, due : undefined}
 			axios
 	          .post('rest/customers/', c)
 	          .then(response => alert("Uspesno registrovan CUSTOMER MRTVI"))

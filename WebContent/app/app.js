@@ -1,7 +1,7 @@
-const HomePage = {template: '<home-page></home-page> '}
+const HomePage = {template: '<div> <navigation-bar></navigation-bar><home-page></home-page></div>'}
 const SportFacilities = {template: '<sport-facilities></sport-facilities>'}
-const Registration = {template: '<register-user></register-user> '}
-const Login = {template: '<login-user></login-user> '}
+const Registration = {template: '<div> <navigation-bar></navigation-bar><register-user></register-user></div>'}
+const Login = {template: '<div> <navigation-bar></navigation-bar><login-user></login-user></div>'}
 
 const router = new VueRouter({
 	mode: 'hash',
