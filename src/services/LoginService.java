@@ -90,7 +90,7 @@ public class LoginService   {
 		}
 		return loginStatus;
 		
-	}
+	}	
 	@GET
 	@Path("loggedUser")
 	@Produces(MediaType.APPLICATION_JSON)

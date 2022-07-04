@@ -96,7 +96,9 @@ Vue.component("register-user", {
     		</div>
     		
       </form>
-  </div>`,
+  </div>
+  
+  `,
   methods : {
 		createCustomer: function(customer) {
 			var c = {username:customer.username, password:customer.password, name:customer.name, surname:customer.surname,

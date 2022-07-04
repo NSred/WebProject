@@ -1,33 +1,60 @@
 Vue.component("sport-facilities", {
 	data: function(){
 		return{
-			sportFacilities: null
+			sportFacilities: null,
 		}
 	},
 	
 	template: `
-	<div>
-	<h1> Sport Facilities </h1>
-	<table border="1">
 	
-		<tr bgcolor="lightgrey">
-			<th><b>Naziv</b></th>
-			<th><b>Tip</b></th>
-			<th><b>Lokacija</b></th>
-			<th><b>Prosecna ocena</b></th>
-			<th><b>Radi</b></th>
-		</tr>
+	<html lang="en">
+		<head>
+		    <meta charset="UTF-8">
+		    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		    <title>Complete Responsive Food Website Design Tutorial</title>
 		
-		<tr v-for="sf in sportFacilities">
-			<td>{{sf.name}}</td>
-			<td>{{sf.type }}</td>
-			<td>{{sf.location}}</td>
-			<td>{{sf.averageGrade }}</td>
-			<td>{{ConvertWorking(sf)}}</td>
-		</tr>
+		    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 		
-	</table>
-	</div>`,
+		    <!-- font awesome cdn link  -->
+		
+		    <!-- custom css file link  -->
+		    <link rel="stylesheet" href="css/dataView.css">
+		
+		</head>
+		<body>
+	<section class="dishes" id="dishes">
+	
+	    <h3 class="sub-heading"> Clean Fit </h3>
+	    <h1 class="heading"> Sport facilitites </h1>
+	
+	    <div class="box-container">
+	
+	        <div class="box" v-for="sf in sportFacilities">
+	            <a href="#" class="fas fa-heart"></a>
+	            <a href="#" class="fas fa-eye"></a>
+	            <h3>{{sf.name}}</h3>
+	            <div>
+	            	Type: {{sf.type}}
+	            </div>
+	            <h4>{{sf.location}}</h4>
+	            <span>{{sf.averageGrade}}</span>
+	            <br></br>
+	            <span>{{ConvertWorking(sf)}}</span>
+	            <br></br>
+	            <div><a href="#" class="btn">Details</a></div>
+	        </div>
+	        
+	    </div>
+	
+	</section>	
+		
+		</body>
+	</html>
+	
+	
+	
+	`,
 	methods : {
 		ConvertWorking: function(sportFacility) {
 			
