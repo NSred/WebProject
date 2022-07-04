@@ -105,11 +105,13 @@ public class LoginService   {
 		user.setUsername(username);
 		User trainer = trainerDao.getById(username);
 		if(trainer != null) {
-			return trainer;
+			return new User(trainer.getUsername(), trainer.getPassword(), trainer.getName(),
+					trainer.getSurname(), trainer.getBirthdate(), trainer.getGender(), trainer.getUserRole());
 		}
 		User manager = managerDao.getById(username);
 		if(manager != null) {
-			return manager;
+			return new User(manager.getUsername(), manager.getPassword(), manager.getName(),
+					manager.getSurname(), manager.getBirthdate(), manager.getGender(), manager.getUserRole());
 		}
 		User customer = customerDao.getById(username);
 		if(customer != null) {
@@ -121,7 +123,8 @@ public class LoginService   {
 		}
 		User admin = adminDao.getById(username);
 		if(admin != null) {
-			return admin;
+			return new User(admin.getUsername(), admin.getPassword(), admin.getName(),
+					admin.getSurname(), admin.getBirthdate(), admin.getGender(), admin.getUserRole());
 		}
 		return null;
 		
