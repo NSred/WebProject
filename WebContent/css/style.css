@@ -120,4 +120,8 @@ a.aj_btn:hover{
   .navigation-menu.active{
     display: block;
   }
+  
+  .float{
+  	float : top;
+  }
 }

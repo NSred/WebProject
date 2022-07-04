@@ -4,7 +4,8 @@ Vue.component("login-user", {
 			users: null,
 			user : {username : "", password: ""},
 			username : "",
-			password : ""
+			password : "",
+			logged : true
 		}
 	},
 	template: `
@@ -68,7 +69,7 @@ Vue.component("login-user", {
 					console.log(this.username, this.password)
 					axios
 						.post('rest/login/logInStatus', this.user)
-						.then(response => toast(""))
+						.then(response => alert("Uspesno logovan korisnik MRTVI"))
 					
 					})
 
