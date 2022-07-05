@@ -11,7 +11,7 @@ Vue.component("register-user", {
 	template: `
 	
 	<div class="container">
-      <form @submit="createCustomer(newCustomer)" autocomplete="on">
+      <form @submit.prevent="createCustomer(newCustomer)" autocomplete="on">
       <h1>Register</h1>
         <!--First name-->
     		<div class="box">
@@ -87,14 +87,7 @@ Vue.component("register-user", {
     		<!---Submit Button------>
     		<div class="box" style="background: #2d3e3f">
     				<input type="Submit" name="Submit" class="submit" value="SUBMIT">
-    		</div>
-    		<div>
-    			<tr v-for="c in customers">
-					<td>{{c.name}}</td>
-					<td>{{c.surname }}</td>
-				</tr>
-    		</div>
-    		
+    		</div>    		
       </form>
   </div>
   
@@ -102,8 +95,8 @@ Vue.component("register-user", {
   methods : {
 		createCustomer: function(customer) {
 			var c = {username:customer.username, password:customer.password, name:customer.name, surname:customer.surname,
-					birthdate:customer.birthdate, gender:this.gender, userRole:'CUSTOMER', deleted:false, banned : false,  visitedFacilities:undefined,
-					customerType:undefined, collectedPoints:0.0, due : undefined}
+					birthdate:customer.birthdate, gender:this.gender, userRole:'CUSTOMER', deleted:false, banned : false,  visitedFacilities:null,
+					customerType:null, collectedPoints:0.0, due : null}					
 			axios
 	          .post('rest/customers/', c)
 	          .then(response => alert("Uspesno registrovan CUSTOMER MRTVI"))

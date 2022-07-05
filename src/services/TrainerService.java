@@ -1,6 +1,7 @@
 package services;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Date;
 
 import javax.servlet.ServletContext;
 import javax.ws.rs.Consumes;
@@ -11,8 +12,11 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 
+import beans.Gender;
 import beans.Trainer;
+import beans.UserRole;
 import dao.TrainerDao;
+import dto.TrainerDTO;
 
 @Path("/trainers")
 public class TrainerService  {
@@ -48,8 +52,28 @@ public class TrainerService  {
     @Path("/")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public void createTrainer(Trainer trainer) {
+    public void createTrainer(TrainerDTO trainerDTO) {
         trainerDao.setBasePath(getContext());
+        
+        Trainer trainer = new Trainer();
+        String[] parts = trainerDTO.getBirthdate().split("-");
+        int year, day, month;
+        year = Integer.parseInt(parts[0]);
+        month = Integer.parseInt(parts[1]);
+        day = Integer.parseInt(parts[2]);               
+        
+        @SuppressWarnings("deprecation")
+		Date date = new Date(year - 1900, month - 1, day);
+        trainer.setName(trainerDTO.getName());
+        trainer.setSurname(trainerDTO.getSurname());
+        trainer.setUsername(trainerDTO.getUsername());
+        trainer.setPassword(trainerDTO.getPassword());
+        trainer.setGender(Gender.valueOf(trainerDTO.getGender().toUpperCase()));
+        trainer.setUserRole(UserRole.valueOf(trainerDTO.getUserRole()));
+        trainer.setDeleted(trainerDTO.isDeleted());
+        trainer.setBanned(trainerDTO.isBanned());
+        trainer.setBirthdate(date);
+        
         trainerDao.create(trainer);
     }
 

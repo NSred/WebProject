@@ -9,6 +9,7 @@ const Customer = {template: '<div><customer-navigation></customer-navigation><sp
 const AdminManagersView = {template: '<div><admin-navigation></admin-navigation><admin-managers></admin-managers></div>'}
 const AdminTrainersView = {template: '<div><admin-navigation></admin-navigation><admin-trainers></admin-trainers></div>'}
 const AdminCustomersView = {template: '<div><admin-navigation></admin-navigation><admin-customers></admin-customers></div>'}
+const AdminUserRegistration = {template: '<div><admin-navigation></admin-navigation><admin-userRegistration></admin-userRegistration></div>'}
 
 const router = new VueRouter({
 	mode: 'hash',
@@ -45,6 +46,9 @@ const router = new VueRouter({
 		},
 		{
 			path: '/admin/customersView', component: AdminCustomersView
+		},
+		{
+			path: '/admin/userRegistration', component: AdminUserRegistration
 		}
 	]
 });
