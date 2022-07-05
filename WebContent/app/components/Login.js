@@ -5,7 +5,7 @@ Vue.component("login-user", {
 			user : {username : "", password: ""},
 			username : "",
 			password : "",
-			logged : true
+			logged : true,
 		}
 	},
 	template: `
@@ -42,7 +42,8 @@ Vue.component("login-user", {
     		
     		<!---Submit Button------>
     		<div class="box" style="background: #2d3e3f">
-    				<input type="Submit" name="Submit" class="submit" value="SUBMIT">
+    				<input type="Submit" name="Submit" class="submit" value="SUBMIT" v-on:click="Redirect()"> 
+
     		</div>
     		<!---Submit Button----->
     		
@@ -55,24 +56,36 @@ Vue.component("login-user", {
 	`,
 	methods : {
 		LogIn: function() {
-			console.log("aaa")
 			axios
 				.get('rest/login/loggedUser')
 				.then(response => {
-					console.log("data", response.data)
 					if(response.data){
 						this.user = response.data
 					}else{
 						this.user = {username: this.username, "password" : this.password}
 					}
-					console.log(this.user)
-					console.log(this.username, this.password)
 					axios
 						.post('rest/login/logInStatus', this.user)
-						.then(response => alert("Uspesno logovan korisnik MRTVI"))
-					
-					})
-
+						.then(response => {							
+							alert("Uspesno logovan korisnik MRTVI")
+								if(response.data === true){
+									this.Redirect()
+								}
+							})														
+					})					
+		},
+		Redirect : function(){
+			if(this.user.userRole !== undefined){
+				if(this.user.userRole === "ADMIN"){
+					router.push({ path : 'admin'});
+				} else if(this.user.userRole === "MANAGER"){
+					router.push({ path : "manager"});
+				} else if(this.user.userRole === "COACH"){
+					router.push({ path : "trainer"});
+				} else if(this.user.userRole === "CUSTOMER"){
+					router.push({ path : "customer"});
+				}  
+			}
 		}
 	},
 	

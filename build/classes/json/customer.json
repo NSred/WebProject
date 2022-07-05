@@ -13,5 +13,20 @@
 	    "customerType" : null,
 	    "collectedPoints": 0.0,
 	    "due" : null
+  },
+  	"customer": {
+	    "username": "customer",
+	    "password": "customer",
+	    "name": "shone",
+	    "surname": "nenad",
+	    "birthdate" : null,
+	    "gender" : "MALE",
+	    "userRole" : "CUSTOMER",
+	    "deleted": false,
+	    "banned": false,
+	    "visitedFacilities" : null,
+	    "customerType" : null,
+	    "collectedPoints": 0.0,
+	    "due" : null
   }
 }
