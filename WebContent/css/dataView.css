@@ -229,7 +229,12 @@ header .icons #menu-bars{
 }
 
 .dishes {
-	margin-top: 90px;
+	position : absolute;
+	top : 90px;
+	left:0px;
+	right : 0px;
+	/* bottom : 0px; */
+	/* margin-top: 90px; */
 }
 .dishes .box-container{
     display: grid;
@@ -247,7 +252,8 @@ header .icons #menu-bars{
     position: relative;
     overflow: hidden;
     text-align: center;
-    height : 25rem;
+    height : 45rem;
+    width : 30rem;
 }
 
 .dishes .box-container .box .fa-heart,
