@@ -8,7 +8,8 @@
     "location": "BUlevar Cara Lazara 11",
     "averageGrade": 4.4,
     "openTime": "Jun 15, 2022, 2:36:51 AM",
-    "closeTime": "Jun 30, 2022, 2:36:51 AM"
+    "closeTime": "Jun 30, 2022, 2:36:51 AM",
+    "imageName" : ""
   },
   "2": {
 	"sportFacilityId": "2",
@@ -19,7 +20,8 @@
     "location": "Lasla Gala 11",
     "averageGrade": 3.4,
     "openTime": "Jun 15, 2022, 2:36:51 AM",
-    "closeTime": "Jun 30, 2022, 2:36:51 AM"
+    "closeTime": "Jun 30, 2022, 2:36:51 AM",
+    "imageName" : ""
   },
   "3": {
 	"sportFacilityId": "3",
@@ -30,7 +32,8 @@
     "location": "Fruskogorska 19 ",
     "averageGrade": 3.4,
     "openTime": "Jun 15, 2022, 2:36:51 AM",
-    "closeTime": "Jun 30, 2022, 2:36:51 AM"
+    "closeTime": "Jun 30, 2022, 2:36:51 AM",
+    "imageName" : ""
   },
   "4": {
 	"sportFacilityId": "4",
@@ -41,7 +44,8 @@
     "location": "Bulevar Evrope 33 ",
     "averageGrade": 3.4,
     "openTime": "Jun 15, 2022, 2:36:51 AM",
-    "closeTime": "Jun 30, 2022, 2:36:51 AM"
+    "closeTime": "Jun 30, 2022, 2:36:51 AM",
+    "imageName" : ""
   }
 
 }

@@ -14,7 +14,7 @@ Vue.component("admin-navigation", {
         <i class="menu-toggle-btn fas fa-bars"></i>
         <nav class="navigation-menu">
           <a href="#/admin"><i class="fas fa-home home"></i> Home</a>
-          <a href="#"></i> Facilities</a>
+          <a href="#/admin/createFacility"></i> Facilities</a>
           <a href="#/admin/userRegistration"></i> Register</a>
           <a href="#"></i> Skills</a>
           <a href="#"></i> Contact</a>
