@@ -67,7 +67,7 @@ Vue.component("login-user", {
 					axios
 						.post('rest/login/logInStatus', this.user)
 						.then(response => {							
-							alert("Uspesno logovan korisnik MRTVI")
+							toast("Uspesno logovan korisnik MRTVI")
 								if(response.data === true){
 									this.Redirect()
 								}
