@@ -11,12 +11,14 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 
 import beans.FacilityType;
 import beans.Gender;
+import beans.Manager;
 import beans.SportFacility;
 import beans.Trainer;
 import beans.UserRole;
@@ -52,6 +54,15 @@ public class SportFacilityService {
 	public ArrayList<SportFacility> getFacilities() {
 		sportFacilityDao.setBasePath(getContext());
 		return sportFacilityDao.getAllToList();
+	}
+	
+	@GET
+	@Path("/getFacilityById/{sportFacilityId}")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public SportFacility getFacilityById(@PathParam("sportFacilityId") String sportFacilityId) {
+		sportFacilityDao.setBasePath(getContext());
+		return sportFacilityDao.getById(sportFacilityId);
 	}
 	
 	@POST

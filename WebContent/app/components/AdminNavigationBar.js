@@ -16,7 +16,7 @@ Vue.component("admin-navigation", {
           <a href="#/admin"><i class="fas fa-home home"></i> Home</a>
           <a href="#/admin/createFacility"></i> Facilities</a>
           <a href="#/admin/userRegistration"></i> Register</a>
-          <a href="#"></i> Skills</a>
+          <a href="#/admin/usersView"></i> All users</a>
           <a href="#"></i> Contact</a>
         </nav>
       </div>
