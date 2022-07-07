@@ -21,7 +21,7 @@ Vue.component("login-user", {
             <i class="fa fa-user" aria-hidden="true"></i>
           </div>
     			<div class="fr">
-    					<input type="text" name="username" placeholder="Username" v-model="username"
+    					<input type="text" name="username" placeholder="Username" v-model="user.username"
               class="textBox" autofocus="on" required>
     			</div>
     			<div class="clr"></div>
@@ -34,7 +34,7 @@ Vue.component("login-user", {
     			<div class="fl iconBox"><i class="fa fa-key" aria-hidden="true"></i></div>
     			<div class="fr">
     					<input type="Password" required name="password" placeholder="Password" class="textBox"
-    					v-model="password">
+    					v-model="user.password">
     			</div>
     			<div class="clr"></div>
     		</div>
@@ -57,21 +57,21 @@ Vue.component("login-user", {
 	methods : {
 		LogIn: function() {
 			axios
-				.get('rest/login/loggedUser')
-				.then(response => {
-					if(response.data){
-						this.user = response.data
-					}else{
-						this.user = {username: this.username, "password" : this.password}
-					}
+				.post('rest/login/logInStatus', this.user)
+				.then(response => {							
+					toast("Uspesno logovan korisnik MRTVI")
 					axios
-						.post('rest/login/logInStatus', this.user)
-						.then(response => {							
-							toast("Uspesno logovan korisnik MRTVI")
-								if(response.data === true){
-									this.Redirect()
-								}
-							})														
+						.get('rest/login/loggedUser')
+						.then(response => {
+							if(response.data){
+								this.user = response.data
+								this.Redirect()
+							}else{
+								this.user = {username: this.username, "password" : this.password}
+							}
+														
+						})	
+						
 					})					
 		},
 		Redirect : function(){

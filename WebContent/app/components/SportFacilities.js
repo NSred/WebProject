@@ -33,13 +33,13 @@ Vue.component("sport-facilities", {
 	        <div class="box" v-for="sf in sportFacilities">
 	            <a href="#" class="fas fa-heart"></a>
 	            <a href="#" class="fas fa-eye"></a>
+	            <img :src="sf.imageName" alt="JEBISE"/>
 	            <h3>{{sf.name}}</h3>
 	            <div>
 	            	Type: {{sf.type}}
 	            </div>
 	            <h4>{{sf.location}}</h4>
 	            <span>{{sf.averageGrade}}</span>
-
 	            <br></br>
 	            <span>{{ConvertWorking(sf)}}</span>
 	            <br></br>

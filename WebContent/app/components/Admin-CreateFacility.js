@@ -4,7 +4,7 @@ Vue.component("admin-createFacility", {
 			managers : null,
 			selectedManager : {},
 			newFacility : {sportFacilityId : "", name : "", type : null, facilityContent : null, isWorking : false, location  : "", averageGrade : 0.0, openTime : null, closeTime : null, imageName : ""},
-			facilityContent : []
+			facilityContent : [],
 		}
 	},
 
@@ -93,7 +93,9 @@ Vue.component("admin-createFacility", {
 								<option value="DANCINGSTUDIO">DANCING STUDIO</option>
 								<option value="BOWLINGCENTER">BOWLING CENTER</option>
 								<option value="SHOOTINGRANGE">SHOOTING RANGE</option>
-							</select> 
+							</select>
+							
+							<br></br>
     		</div>
     		
     		<!---CONTENT----->
@@ -107,19 +109,29 @@ Vue.component("admin-createFacility", {
 			</div>
 			
 			<!---manager of facility----->
-    		<div>
+    		<div class="box">
 	          <label for="gender" class="fl fontLabel"> Manager </label>
-	          				<template>
-		    					<select v-model="selectedManager">
-		    						<template v-for="m in managers">
-		    							<template v-if="m.sportFacilityId === ''">
-											<option :value="m">											
-													{{m.name}} &nbsp {{m.surname}}											
-											</option>
-										</template>
-									</template>
-								</select>
-							</template> 
+      				<template>
+    					<select  v-model="selectedManager">
+    						<template v-for="m in managers">
+    							<template v-if="m.sportFacilityId === ''">
+									<option :value="m">											
+											{{m.name}} &nbsp {{m.surname}}											
+									</option>
+								</template>
+							</template>
+						</select>
+					</template>
+						</select>
+					
+							
+					<button style="background: #2a6e3e" v-on:click="redirectToRegistration()">Add new manager</button>
+					<br></br>
+    		</div>
+    		
+    		<div class="box">
+    			<label for="fajl" class="fl fontLabel"> Select logo: </label>
+	    			<input type="file" id="filee" v-on:change="loadFile">
     		</div>
 
     		<!---Submit Button------>
@@ -153,7 +165,15 @@ Vue.component("admin-createFacility", {
 				  .then(response => alert("Uspesno azuriran menadzer"))
 				  .catch(error =>  {
 							alert(error.message + " GRESKA U AZURIRANJU MENADZERA");
-						})
+						})						
+		},
+		redirectToRegistration : function(){
+			router.push({ path : '/admin/userRegistration'});
+		},
+		loadFile : function(event){
+			var selectedFile = document.getElementById('filee');
+			selectedFile.src = URL.createObjectURL(event.target.files[0]);
+			console.log(selectedFile.value)
 		}
 	},
 	mounted () {
