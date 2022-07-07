@@ -39,6 +39,7 @@ Vue.component("sport-facilities", {
 	            </div>
 	            <h4>{{sf.location}}</h4>
 	            <span>{{sf.averageGrade}}</span>
+
 	            <br></br>
 	            <span>{{ConvertWorking(sf)}}</span>
 	            <br></br>
@@ -62,7 +63,7 @@ Vue.component("sport-facilities", {
 				return "Radi";
 				else
 				return "Ne radi";
-		},
+		}
 	},
 	mounted () {
         axios
