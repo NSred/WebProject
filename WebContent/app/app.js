@@ -11,6 +11,9 @@ const AdminTrainersView = {template: '<div><admin-navigation></admin-navigation>
 const AdminCustomersView = {template: '<div><admin-navigation></admin-navigation><admin-customers></admin-customers></div>'}
 const AdminUserRegistration = {template: '<div><admin-navigation></admin-navigation><admin-userRegistration></admin-userRegistration></div>'}
 const AdminCreateFacility = {template: '<div><admin-navigation></admin-navigation><admin-createFacility></admin-createFacility></div>'}
+const AdminHome = {template: '<div><admin-navigation></admin-navigation><sport-facilities></sport-facilities></div>'}
+const ManagerFacility = {template: '<div><manager-navigation></manager-navigation><manager-facility></manager-facility></div>'}
+const ManagerCreateTraining = {template: '<div><manager-navigation></manager-navigation><manager-training></manager-training></div>'}
 
 const router = new VueRouter({
 	mode: 'hash',
@@ -28,7 +31,7 @@ const router = new VueRouter({
 			path: '/login', component: Login
 		},
 		{
-			path: '/admin', component: Admin
+			path: '/admin', component: AdminHome
 		},
 		{
 			path: '/manager', component: Manager
@@ -53,6 +56,15 @@ const router = new VueRouter({
 		},
 		{
 			path: '/admin/createFacility', component: AdminCreateFacility
+		},
+		{
+			path: '/admin/usersView', component: Admin
+		},
+		{
+			path: '/manager/facility', component: ManagerFacility
+		},
+		{
+			path: '/manager/createTraining', component: ManagerCreateTraining
 		}
 	]
 });
