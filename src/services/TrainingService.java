@@ -1,6 +1,10 @@
 package services;
 
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.time.Duration;
 import java.time.temporal.TemporalUnit;
 import java.util.ArrayList;
@@ -15,6 +19,8 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 
+import org.glassfish.jersey.media.multipart.FormDataContentDisposition;
+import org.glassfish.jersey.media.multipart.FormDataParam;
 
 import beans.Training;
 
@@ -86,4 +92,37 @@ public class TrainingService {
         
     	trainingDao.create(training);
     }
+    
+	
+	 /* @POST	  
+	  @Path("/uploadImage")	 
+	  @Consumes(MediaType.MULTIPART_FORM_DATA) public String
+	  uploadFile(@FormDataParam("file") InputStream uploadedInputStream, @FormDataParam("file") FormDataContentDisposition fileDetail) {
+ 
+		  String imageName = fileDetail.getName(); System.out.println(imageName);
+		  //saveToDisk(uploadedInputStream, imageName);
+	  
+		  return imageName;
+	  }
+	  
+	 /* private void saveToDisk(InputStream uploadedInputStream, String imageName) {
+	  
+		  String uploadedFileLocation = ctx.getRealPath("") + imageName;
+		  try {
+		  OutputStream out = new FileOutputStream(new File(uploadedFileLocation));
+		  int read = 0;
+		  byte[] bytes = new byte[1024];
+		  
+		  out = new FileOutputStream(new File(uploadedFileLocation));
+		  while((read = uploadedInputStream.read(bytes)) != -1) {
+			  out.write(bytes, 0, read); 
+			  }
+		  
+		  out.flush();
+		  out.close();
+		  } catch(IOException e) {
+			  e.printStackTrace();
+			  }
+		  
+		  }	 */
 }

@@ -9,7 +9,7 @@
     "averageGrade": 4.4,
     "openTime": "Jun 15, 2022, 2:36:51 AM",
     "closeTime": "Jun 30, 2022, 2:36:51 AM",
-    "imageName" : ""
+    "imageName" : "images/flex.png"
   },
   "2": {
 	"sportFacilityId": "2",
@@ -21,7 +21,7 @@
     "averageGrade": 3.4,
     "openTime": "Jun 15, 2022, 2:36:51 AM",
     "closeTime": "Jun 30, 2022, 2:36:51 AM",
-    "imageName" : ""
+    "imageName" : "images/gym.png"
   },
   "3": {
 	"sportFacilityId": "3",
@@ -33,7 +33,7 @@
     "averageGrade": 3.4,
     "openTime": "Jun 15, 2022, 2:36:51 AM",
     "closeTime": "Jun 30, 2022, 2:36:51 AM",
-    "imageName" : ""
+    "imageName" : "images/gladiator.png"
   },
   "4": {
 	"sportFacilityId": "4",
@@ -45,7 +45,7 @@
     "averageGrade": 3.4,
     "openTime": "Jun 15, 2022, 2:36:51 AM",
     "closeTime": "Jun 30, 2022, 2:36:51 AM",
-    "imageName" : ""
+    "imageName" : "images/synergy.png"
   }
 
 }

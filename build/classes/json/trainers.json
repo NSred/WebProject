@@ -4,7 +4,7 @@
 	    "password": "123123123",
 	    "name": "PROBA",
 	    "surname": "PROBA",
-	    "birthdate" : null,
+	    "birthdate" : "Jul 10, 2003, 2:36:51 AM",
 	    "gender" : "MALE",
 	    "userRole" : "COACH",
 	    "deleted": false
@@ -14,7 +14,7 @@
 	    "password": "trainer",
 	    "name": "PROBAA",
 	    "surname": "PROBA",
-	    "birthdate" : null,
+	    "birthdate" : "Jun 11, 2000, 2:36:51 AM",
 	    "gender" : "MALE",
 	    "userRole" : "COACH",
 	    "deleted": false

@@ -1,10 +1,10 @@
 {
-	"12312322": {
-	    "username": "12312322",
-	    "password": "123123123",
+	"a": {
+	    "username": "a",
+	    "password": "a",
 	    "name": "PROBA",
 	    "surname": "PROBA",
-	    "birthdate" : null,
+	    "birthdate" : "Jul 10, 2003, 2:36:51 AM",
 	    "gender" : "MALE",
 	    "userRole" : "ADMIN",
 	    "deleted": false
@@ -14,7 +14,7 @@
 	    "password": "admin",
 	    "name": "admin",
 	    "surname": "admin",
-	    "birthdate" : null,
+	    "birthdate" : "Jun 11, 2000, 2:36:51 AM",
 	    "gender" : "MALE",
 	    "userRole" : "ADMIN",
 	    "deleted": false
