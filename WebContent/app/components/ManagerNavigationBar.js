@@ -15,7 +15,7 @@ Vue.component("manager-navigation", {
         <nav class="navigation-menu">
           <a href="#/manager"><i class="fas fa-home home"></i> Home</a>
           <a href="#/manager/facility"></i> Your Facility</a>
-          <a href="#"></i> Services</a>
+          <a href="#/manager/trainingsView"></i> All trainings</a>
           <a href="#"></i> Skills</a>
           <a href="#"></i> Contact</a>
         </nav>

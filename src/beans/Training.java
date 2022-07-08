@@ -78,7 +78,7 @@ public class Training {
 	@Override
 	public String toString() {
 		return "Training [name=" + name + ", type=" + type + ", sportFacilityId=" + sportFacilityId + ", duration="
-				+ durationInMinutes + ", trainerId=" + trainerId + ", description=" + description + ", deleted=" + deleted + "]";
+				+ durationInMinutes + ", trainerId=" + trainerId + ", description=" + description + ", deleted=" + deleted + ", imageName=" + imageName +"]";
 	}
 
 }
