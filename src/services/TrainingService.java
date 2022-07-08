@@ -57,13 +57,14 @@ public class TrainingService {
     public ArrayList<Training> getTrainingsByFacilityId(@PathParam("sportFacilityId") String sportFacilityId) {
     	trainingDao.setBasePath(getContext());
     	
+    	ArrayList<Training> treningsToFill = new ArrayList<Training>();
     	ArrayList<Training> trainings = trainingDao.getAllToList();
     	for(Training t : trainings) {
-    		if(t.getSportFacilityId() == sportFacilityId) {
-    			trainings.add(t);
+    		if(t.getSportFacilityId().equals(sportFacilityId)) {
+    			treningsToFill.add(t);
     		}
     	}
-        return trainings;
+        return treningsToFill;
     }
 
     @POST
