@@ -16,8 +16,8 @@ Vue.component("admin-navigation", {
           <a href="#/admin"><i class="fas fa-home home"></i> Home</a>
           <a href="#/admin/createFacility"></i> Facilities</a>
           <a href="#/admin/userRegistration"></i> Register</a>
-          <a href="#/admin/usersView"></i> All users</a>
-          <a href="#"></i> Contact</a>
+          <a href="#/admin/usersView"></i> All Users</a>
+          <a href="#/admin/myProfile"></i> My Profile</a>
           <a href="#/login" class="aj_btn"> <i class="fas fa-lock" aria-hidden="true"></i>
             LOG OUT</a>
         </nav>

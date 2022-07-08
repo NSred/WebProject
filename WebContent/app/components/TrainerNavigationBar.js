@@ -16,7 +16,7 @@ Vue.component("trainer-navigation", {
           <a href="#/trainer"><i class="fas fa-home home"></i> Home</a>
           <a href="#"></i> About</a>
           <a href="#"></i> Services</a>
-          <a href="#"></i> Skills</a>
+          <a href="#/trainer/myProfile"></i> My Profile</a>
           <a href="#"></i> Contact</a>
         </nav>
       </div>

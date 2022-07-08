@@ -8,7 +8,7 @@
     "gender": "FEMALE",
     "userRole": "MANAGER",
     "deleted": false,
-    "sportFacilityId": "123"
+    "sportFacilityId": "1"
   },
   "djokaa": {
     "username": "djokaa",
@@ -19,7 +19,7 @@
     "gender": "MALE",
     "userRole": "MANAGER",
     "deleted": false,
-    "sportFacilityId": "12345"
+    "sportFacilityId": "2"
   },
   "manager": {
     "username": "manager",
@@ -30,6 +30,6 @@
     "gender": "MALE",
     "userRole": "MANAGER",
     "deleted": false,
-    "sportFacilityId": "12345"
+    "sportFacilityId": "1"
   }
 }

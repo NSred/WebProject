@@ -8,7 +8,8 @@ Vue.component("manager-training", {
 			newTraining : {name : "", type : "", sportFacilityId : "", durationInMinutes : null, trainerId  : "", description : "", deleted : false, imageName : ""},
 			facilityContent : [],
 			trainingsInFacility : null,
-			sameName : false
+			sameName : false,
+			image : ""
 		}
 	},
 
@@ -80,7 +81,7 @@ Vue.component("manager-training", {
     		
     		<div class="box">
     			<label for="fajl" class="fl fontLabel"> Select logo: </label>
-	    			<input type="file" id="filee" v-on:change="loadFile">
+	    			<input type="file" name ="fileMedia" id="fileMedia" v-on:change="loadFile">
     		</div>
 
     		<!---Submit Button------>
@@ -95,7 +96,7 @@ Vue.component("manager-training", {
   	methods : {
 		createTraining: function(training) {
 				var t = {name : training.name, type : training.type, sportFacilityId : this.manager.sportFacilityId, durationInMinutes : training.durationInMinutes, trainerId  : this.selectedTrainer.username,
-						 description : training.description, deleted : false, imageName : ""}
+						 description : training.description, deleted : false, imageName : this.image}
 						 
 				for(let tr of this.trainingsInFacility){
 					if(tr.name === training.name){
@@ -126,10 +127,22 @@ Vue.component("manager-training", {
 		redirectToRegistration : function(){
 			router.push({ path : '/admin/userRegistration'});
 		},
-		loadFile : function(event){
-			var selectedFile = document.getElementById('filee');
-			selectedFile.src = URL.createObjectURL(event.target.files[0]);
-			console.log(selectedFile.value)
+		loadFile : function(){
+			var file = $("#fileMedia").files[0];
+			console.log(file)
+			var formData = new FormData();
+			console.log(formData)
+			formData.append('file', file);
+			console.log(formData)
+			
+			
+			axios
+				.post('rest/trainings/uploadImage', formData)
+				.then(response => this.image = response.data)
+				 .catch(error =>  {
+								alert(error.message + " GRESKA U UPPLOADU");
+							})
+				console.log(this.image)
 		}
 	},
 	mounted () {
