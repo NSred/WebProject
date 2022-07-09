@@ -19,7 +19,7 @@ Vue.component("trainer-navigation", {
         <i class="menu-toggle-btn fas fa-bars"></i>
         <nav class="navigation-menu">
           <a href="#/trainer"><i class="fas fa-home home"></i> Home</a>
-          <a href="#"></i> About</a>
+          <a href="#/trainer/trainingsView"></i> Your trainings</a>
           <a href="#"></i> Services</a>
           <a href="#/trainer/myProfile"></i> My Profile</a>
           <a href="#"></i> Contact</a>

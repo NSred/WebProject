@@ -21,6 +21,7 @@ const TrainerProfile = {template: '<div><trainer-navigation></trainer-navigation
 const CustomerProfile = {template: '<div><customer-navigation></customer-navigation><customer-profile></customer-profile></div>'}
 const ManagerEditTraining = {template: '<div><manager-navigation></manager-navigation><edit-training></edit-training></div>'}
 const ManagerViewTrainers = {template: '<div><manager-navigation></manager-navigation><manager-trainers></manager-trainers></div>'}
+const TrainerTrainingsView = {template: '<div><trainer-navigation></trainer-navigation><trainer-trainings></trainer-trainings></div>'}
 
 const router = new VueRouter({
 	mode: 'hash',
@@ -93,6 +94,9 @@ const router = new VueRouter({
 		},
 		{
 			path: '/manager/viewTrainers' , component: ManagerViewTrainers
+		},
+		{
+			path: '/trainer/trainingsView' , component: TrainerTrainingsView
 		}
 	]
 });

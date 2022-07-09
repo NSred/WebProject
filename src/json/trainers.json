@@ -1,9 +1,9 @@
 {
-	"1231234": {
-	    "username": "1231234",
-	    "password": "123123123",
-	    "name": "PROBA",
-	    "surname": "PROBA",
+	"trenercina": {
+	    "username": "trenercina",
+	    "password": "trenerska",
+	    "name": "trenercina",
+	    "surname": "trenerska",
 	    "birthdate" : "Jul 10, 2003, 2:36:51 AM",
 	    "gender" : "MALE",
 	    "userRole" : "COACH",

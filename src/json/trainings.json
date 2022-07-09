@@ -24,7 +24,7 @@
     "type": "Sauna",
     "sportFacilityId": "2",
     "durationInMinutes": 30,
-    "trainerId": "trainer",
+    "trainerId": "trenercina",
     "description": "sjajan trening",
     "deleted": false,
     "imageName": "images/sauna.png"
