@@ -1,0 +1,42 @@
+{
+  "1234567890": {
+	"id": "1234567890",
+    "type": "Mesecna",
+    "paymentDate": "Jun 15, 2022, 2:36:51 AM",
+    "dateAndTimeOfValidity": "Jun 30, 2022, 2:36:51 AM",
+    "price": 2000,
+    "customerId": "",
+    "status": true,
+    "numberOfSession": 30
+  },
+  "0987654321": {
+	"id": "0987654321",
+    "type": "Godisnja",
+    "paymentDate": "Jun 15, 2022, 2:36:51 AM",
+    "dateAndTimeOfValidity": "Jun 30, 2022, 2:36:51 AM",
+    "price": 15000,
+    "customerId": "",
+    "status": true,
+    "numberOfSession": 300
+  },
+  "1234567809": {
+	"id": "1234567809",
+    "type": "Mesecna",
+    "paymentDate": "Jun 15, 2022, 2:36:51 AM",
+    "dateAndTimeOfValidity": "Jun 30, 2022, 2:36:51 AM",
+    "price": 2000,
+    "customerId": "",
+    "status": true,
+    "numberOfSession": 30
+  },
+  "1234576890": {
+	"id": "1234576890",
+    "type": "Godisnja",
+    "paymentDate": "Jun 15, 2022, 2:36:51 AM",
+    "dateAndTimeOfValidity": "Jun 30, 2022, 2:36:51 AM",
+    "price": 18000,
+    "customerId": "",
+    "status": true,
+    "numberOfSession": 350
+  }
+}

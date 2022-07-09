@@ -91,6 +91,22 @@ public class TrainingService {
     }  
     
     @GET
+    @Path("/getTrainingsByTrainingType/{trainingType}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public ArrayList<Training> getTrainingsByTrainingType(@PathParam("trainingType") String trainingType) {
+    	trainingDao.setBasePath(getContext());
+    	
+    	ArrayList<Training> treningsToFill = new ArrayList<Training>();
+    	ArrayList<Training> trainings = trainingDao.getAllToList();
+    	for(Training t : trainings) {
+    		if(t.getType().equals(trainingType)) {
+    			treningsToFill.add(t);
+    		}
+    	}
+        return treningsToFill;
+    }  
+    
+    @GET
 	@Path("/getTrainingById/{trainingId}")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)

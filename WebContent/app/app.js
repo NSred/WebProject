@@ -22,6 +22,9 @@ const CustomerProfile = {template: '<div><customer-navigation></customer-navigat
 const ManagerEditTraining = {template: '<div><manager-navigation></manager-navigation><edit-training></edit-training></div>'}
 const ManagerViewTrainers = {template: '<div><manager-navigation></manager-navigation><manager-trainers></manager-trainers></div>'}
 const TrainerTrainingsView = {template: '<div><trainer-navigation></trainer-navigation><trainer-trainings></trainer-trainings></div>'}
+const TrainerPersonalTrainingsView = {template: '<div><trainer-navigation></trainer-navigation><trainer-personal></trainer-personal></div>'}
+const TrainerGroupTrainingsView = {template: '<div><trainer-navigation></trainer-navigation><trainer-group></trainer-group></div>'}
+const CustomerDues = {template: '<div><customer-navigation></customer-navigation><customer-dues></customer-dues></div> '}
 
 const router = new VueRouter({
 	mode: 'hash',
@@ -97,6 +100,15 @@ const router = new VueRouter({
 		},
 		{
 			path: '/trainer/trainingsView' , component: TrainerTrainingsView
+		},
+		{
+			path: '/trainer/personalTrainingsView' , component: TrainerPersonalTrainingsView
+		},
+		{
+			path: '/trainer/groupTrainigsView' , component: TrainerGroupTrainingsView
+		},
+		{
+			path: '/customer/dues' , component: CustomerDues
 		}
 	]
 });
