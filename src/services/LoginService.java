@@ -55,8 +55,9 @@ public class LoginService   {
 		return (ctx.getRealPath("") + "WEB-INF" + File.separator + "classes" + File.separator + "json"
 				+ File.separator);
 	}
-	private void setLoggedInUser(String username) {
+	private void setLoggedInUser(String username, String password) {
 		ctx.setAttribute("username", username);
+		ctx.setAttribute("password", password);
 	}
 	
 	@POST
@@ -64,6 +65,7 @@ public class LoginService   {
 	@Produces(MediaType.TEXT_PLAIN)
 	public String userLogOut() {
 		ctx.setAttribute("username", "");
+		ctx.setAttribute("password", "");
 		return "Log Out Successful";
 	}
 	@POST
@@ -139,7 +141,7 @@ public class LoginService   {
 						state = UserState.BANNED;
 					}
 					else {
-						setLoggedInUser(user.getUsername());
+						setLoggedInUser(user.getUsername(), user.getPassword());
 						state = UserState.SUCCESS;
 					}
 			}
@@ -154,7 +156,7 @@ public class LoginService   {
 		for (Admin u : adminDao.getAllToList()) {
 			if (u.getUsername().equals(user.getUsername())) {
 				if (u.getPassword().equals(user.getPassword())) {
-					setLoggedInUser(user.getUsername());
+					setLoggedInUser(user.getUsername(), user.getPassword());
 					return UserState.SUCCESS;
 			
 			}
@@ -168,12 +170,12 @@ public class LoginService   {
 		UserState state = UserState.ERROR;
 		for (Manager u : managerDao.getAllToList()) {
 			if (u.getUsername().equals(user.getUsername())) {
-				if (u.getPassword().equals(u.getPassword())) {
+				if (u.getPassword().equals(user.getPassword())) {
 					if(u.isBanned()) {
 						state =  UserState.BANNED;
 					}
 					else {
-						setLoggedInUser(u.getUsername());
+						setLoggedInUser(u.getUsername(), u.getPassword());
 						state = UserState.SUCCESS;
 					}
 				}
@@ -192,7 +194,7 @@ public class LoginService   {
 						state = UserState.BANNED;
 					}
 					else {
-						setLoggedInUser(user.getUsername());
+						setLoggedInUser(user.getUsername(), user.getPassword());
 						state = UserState.SUCCESS;
 					}
 				}

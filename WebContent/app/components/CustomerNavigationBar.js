@@ -1,4 +1,9 @@
 Vue.component("customer-navigation", {
+	data : function(){
+		return{
+			logOutMessage : ""	
+		}
+	},
 	template: `
 <html lang="en" dir="ltr">
   <head>
@@ -18,10 +23,22 @@ Vue.component("customer-navigation", {
           <a href="#"></i> Services</a>
           <a href="#/customer/myProfile"></i> My Profile</a>
           <a href="#"></i> Contact</a>
+          <a href="#/login" class="aj_btn" v-on:click="logOut()"> <i class="fas fa-lock" aria-hidden="true"></i>
+            LOG OUT</a>
         </nav>
       </div>
       </header>
      </body>
 </html>
 	`,
+	methods : {
+		logOut : function(){
+			console.log("sss")
+			axios
+				.post('rest/login/logOut')
+				.then(response => {this.logOutMessage = response.data
+								toast(this.logOutMessage)
+				})
+		}
+	}
 });
