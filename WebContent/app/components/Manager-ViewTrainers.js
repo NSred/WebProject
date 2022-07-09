@@ -1,4 +1,4 @@
-Vue.component("manager-facility", {
+Vue.component("manager-trainers", {
 	data: function(){
 		return{
 			sportFacility: {},
@@ -30,24 +30,21 @@ Vue.component("manager-facility", {
 	<section class="dishes" id="dishes">
 	
 	    <h3 class="sub-heading"> Clean Fit </h3>
-	    <h1 class="heading"> {{manager.name}}'s Facility </h1>
+	    <h1 class="heading">{{sportFacility.name}}'s trainers </h1>
 	
 	    <div class="box-container">
 	
-	        <div class="box" >
+	        <div class="box" v-for="t in trainers">
 	            <a href="#" class="fas fa-heart"></a>
 	            <a href="#" class="fas fa-eye"></a>
-	            <img :src="sportFacility.imageName" alt="JEBISE"/>
-	            <h3>{{sportFacility.name}}</h3>
+	            <h3>{{t.name}} &nbsp {{t.surname}}</h3>
 	            <div>
-	            	Type: {{sportFacility.type}}
+	            	{{t.gender}}
 	            </div>
-	            <h4>{{sportFacility.location}}</h4>
-	            <span>{{sportFacility.averageGrade}}</span>
-	            <br></br>
-	            <span>{{ConvertWorking(sportFacility)}}</span>	            
-	            <div><a href="#/manager/createTraining" class="btn">Create training</a></div>
-	            <div><a href="#/manager/viewTrainers" class="btn">View trainers</a></div>
+	            <h4>{{t.birthdate|dateFormat('YYYY-DD-MM')}}</h4>
+	            <span>{{t.username}}</span>
+	            <br></br>	            
+	            <div><a href="#" class="btn">Details</a></div>
 	        </div>
 	        
 	    </div>
@@ -58,13 +55,10 @@ Vue.component("manager-facility", {
 		</body>
 	</html>	
 	`,
-	methods : {
-		ConvertWorking: function(sportFacility) {
-			
-			if(sportFacility.isWorking===true)
-				return "Radi";
-				else
-				return "Ne radi";
+	filters : {
+		dateFormat : function(value, format){
+			var parsed = moment(value);
+			return parsed.format(format);
 		}
 	},
 	mounted () {
@@ -89,8 +83,10 @@ Vue.component("manager-facility", {
 		          					axios
 				          				.post('rest/trainers/getTrainersByTrainingIds' , this.trainings)
 				          				.then(response => {(this.trainers = response.data)
-				          				console.log(this.trainers)
-				          				})
+				          				for(var t of this.trainers){
+											t.birthdate = new Date(parseInt(t.birthdate))
+										}
+				          			})
 				          				
 		          				})
 		          				

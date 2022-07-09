@@ -44,7 +44,7 @@ Vue.component("all-trainings", {
 	            <span>{{tr.durationInMinutes}} min</span>
 	            <br></br>
 	            <br></br>
-	            <div><a href="#" class="btn">Details</a></div>
+	            <div class="btn" v-on:click="redirectWithParam(tr.name)">Edit</div>
 	        </div>
 	        
 	    </div>
@@ -57,6 +57,11 @@ Vue.component("all-trainings", {
 	
 	
 	`,
+	methods :  {
+		redirectWithParam : function(id){
+			router.push({ name : 'editTraining', params:{id}});
+		}
+	},
 	mounted () {
         axios
           .get('rest/login/loggedUser')
