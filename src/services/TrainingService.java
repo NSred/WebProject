@@ -22,6 +22,7 @@ import javax.ws.rs.core.MediaType;
 import org.glassfish.jersey.media.multipart.FormDataContentDisposition;
 import org.glassfish.jersey.media.multipart.FormDataParam;
 
+import beans.Trainer;
 import beans.Training;
 
 import dao.TrainingDao;
@@ -71,7 +72,16 @@ public class TrainingService {
     		}
     	}
         return treningsToFill;
-    }
+    }  
+    
+    @GET
+	@Path("/getTrainingById/{trainingId}")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Training getTrainingById(@PathParam("trainingId") String trainingId) {
+		trainingDao.setBasePath(getContext());
+		return trainingDao.getById(trainingId);
+	}
 
     @POST
     @Path("/")

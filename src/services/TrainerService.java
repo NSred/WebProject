@@ -16,13 +16,16 @@ import javax.ws.rs.core.MediaType;
 import beans.Gender;
 import beans.Manager;
 import beans.Trainer;
+import beans.Training;
 import beans.UserRole;
 import dao.TrainerDao;
+import dao.TrainingDao;
 import dto.TrainerDTO;
 
 @Path("/trainers")
 public class TrainerService  {
     TrainerDao trainerDao = new TrainerDao();
+    TrainingDao trainingDao = new TrainingDao();
     
     @Context
     ServletContext ctx;
@@ -57,6 +60,21 @@ public class TrainerService  {
 	public Trainer getTrainerById(@PathParam("userId") String userId) {
 		trainerDao.setBasePath(getContext());
 		return trainerDao.getById(userId);
+	}
+    
+    @POST
+	@Path("/getTrainersByTrainingIds")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public ArrayList<Trainer> getTrainersByTrainingIds(ArrayList<Training> trainings) {
+		trainerDao.setBasePath(getContext());
+		trainingDao.setBasePath(getContext());
+		ArrayList<Trainer> trainers = new ArrayList<Trainer>();
+		for(Training tr : trainings) {
+			Trainer t = getTrainerById(tr.getTrainerId());
+			trainers.add(t);
+		}
+		return trainers;
 	}
     
     @POST

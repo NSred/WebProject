@@ -19,6 +19,8 @@ const AdminProfile = {template: '<div><admin-navigation></admin-navigation><admi
 const ManagerProfile = {template: '<div><manager-navigation></manager-navigation><manager-profile></manager-profile></div>'}
 const TrainerProfile = {template: '<div><trainer-navigation></trainer-navigation><trainer-profile></trainer-profile></div>'}
 const CustomerProfile = {template: '<div><customer-navigation></customer-navigation><customer-profile></customer-profile></div>'}
+const ManagerEditTraining = {template: '<div><manager-navigation></manager-navigation><edit-training></edit-training></div>'}
+const ManagerViewTrainers = {template: '<div><manager-navigation></manager-navigation><manager-trainers></manager-trainers></div>'}
 
 const router = new VueRouter({
 	mode: 'hash',
@@ -85,6 +87,12 @@ const router = new VueRouter({
 		},
 		{
 			path: '/customer/myProfile', component: CustomerProfile
+		},
+		{
+			path: '/manager/editTraining/:id?', name : 'editTraining',  component: ManagerEditTraining
+		},
+		{
+			path: '/manager/viewTrainers' , component: ManagerViewTrainers
 		}
 	]
 });
