@@ -12,6 +12,7 @@ public class Due {
 	private boolean status;
 	private double numberOfSession;
 	
+	public Due() {}
 	
 	public Due(String id, String type, Date paymentDate, Date dateAndTimeOfValidity, double price, String customerId,
 			boolean status, double numberOfSession) {

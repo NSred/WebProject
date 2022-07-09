@@ -1,9 +1,10 @@
-Vue.component("trainer-trainings", {
+Vue.component("trainer-personal", {
 	data: function(){
 		return{
 			trainings: null,
 			user : {},
-			trainer : {}
+			trainer : {},
+			trainingType : "Personal trainings"
 		}
 	},
 	
@@ -28,11 +29,11 @@ Vue.component("trainer-trainings", {
 	<section class="dishes" id="dishes">
 	
 	    <h3 class="sub-heading"> Clean Fit </h3>
-	    <h1 class="heading"> {{trainer.name}}'s Trainings </h1>
+	    <h1 class="heading"> {{trainer.name}}'s personal trainings </h1>
 	
-		<button class="btn" v-on:click="ShowPersonal()">Personal trainings</button>
+		<button class="selectedBtnn" v-on:click="ShowPersonal()">Personal trainings</button>
 	    <button class="btn" v-on:click="ShowGroup()">Group trainings</button>
-	    <button class="selectedBtnn" v-on:click="ShowAll()">All trainings</button>
+	    <button class="btn" v-on:click="ShowAll()">All trainings</button>
 	
 	    <div class="box-container">
 	
@@ -84,8 +85,15 @@ Vue.component("trainer-trainings", {
           		
           			axios
           				.get('rest/trainings/getTrainingsByTrainerId/' + this.trainer.username, this.trainer)
-          				.then(response => (this.trainings = response.data))
+          				.then(response => {(this.trainings = response.data)
+          				
+          					axios
+		          				.get('rest/trainings/getTrainingsByTrainingType/' + this.trainingType)
+		          				.then(response => {(this.trainings = response.data)
+          				
+          				})
           		})
-           })	
+           })
+        })	
     },
 });

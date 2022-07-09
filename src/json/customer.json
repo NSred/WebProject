@@ -1,10 +1,10 @@
 {
-	"sdfsdf": {
-	    "username": "sdfsdf",
-	    "password": "sdfsdfsdf",
+	"customercina": {
+	    "username": "customercina",
+	    "password": "customercina",
 	    "name": "Nenad",
 	    "surname": "Sredojevi?",
-	    "birthdate" : null,
+	    "birthdate" : "Jul 11, 2000, 12:00:00 AM",
 	    "gender" : "MALE",
 	    "userRole" : "CUSTOMER",
 	    "deleted": false,
@@ -19,7 +19,7 @@
 	    "password": "customer",
 	    "name": "shone",
 	    "surname": "nenad",
-	    "birthdate" : null,
+	    "birthdate" : "Jun 17, 2005, 12:00:00 AM",
 	    "gender" : "MALE",
 	    "userRole" : "CUSTOMER",
 	    "deleted": false,
@@ -28,5 +28,20 @@
 	    "customerType" : null,
 	    "collectedPoints": 0.0,
 	    "due" : null
-  }
+  },
+  	"custom": {
+	    "username": "custom",
+	    "password": "custom",
+	    "name": "doktor",
+	    "surname": "doktorcina",
+	    "birthdate": "Jul 17, 2022, 12:00:00 AM",
+	    "gender": "MALE",
+	    "userRole": "CUSTOMER",
+	    "deleted": false,
+	    "banned": false,
+	    "visitedFacilities" : null,
+	    "customerType" : null,
+	    "collectedPoints": 0.0,
+	    "due" : null
+  }	
 }

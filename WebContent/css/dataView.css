@@ -42,6 +42,17 @@ section:nth-child(even){
     padding-top: 1rem;
 }
 
+.selectedBtnn{
+	margin-top: 1rem;
+    display: inline-block;
+    font-size: 1.7rem;
+    color:#fff;
+    background: var(--green);
+    border-radius: .5rem;
+    cursor: pointer;
+    padding:.8rem 3rem;
+}
+
 .heading{
     text-align: center;
     color:var(--black);
