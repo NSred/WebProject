@@ -7,7 +7,9 @@ Vue.component("customer-dues", {
 			user : {},
 			customer : {},
 			exists : false,
-			predefinedDues : []
+			predefinedDues : [],
+			dueByCustomer : {},
+			customerBirth : ""
 		}
 	},
 	
@@ -30,9 +32,17 @@ Vue.component("customer-dues", {
 		</head>
 		<body>
 	<section class="dishes" id="dishes">
-	
+				
 	    <h3 class="sub-heading"> Clean Fit </h3>
-	    <h1 class="heading"> Memberships </h1>
+	    <h1 class="heading"> {{dueByCustomer.customerId}} 's memberships </h1>
+	    
+	    
+	    <div class="membership-box">
+	    	<h2 class="membership-heading">Your membership</h2>
+	    	<h2 class="membership-sub-heading">Type: {{dueByCustomer.type}}</h2>
+	    	<h2 class="membership-sub-heading">Sessions: {{dueByCustomer.numberOfSession}}</h2>
+	    	<h2 class="membership-sub-heading">Expire date: {{dueByCustomer.dateAndTimeOfValidity|dateFormat('DD-MM-YYYY')}}</h2>
+	    </div>
 	
 	    <div class="box-container">
 	
@@ -60,12 +70,15 @@ Vue.component("customer-dues", {
 	methods : {
 		createMembership : function(d){
 			
-			this.paymentDate = d.paymentDate
-      		this.paymentDate = new Date(this.paymentDate)
+
+      		this.paymentDate = new Date()
+      		let dt = new Date()
+      		let todayDate = dt.getTime()
+      		  		
       		this.paymentDate = this.paymentDate.toLocaleDateString('en-CA')
       		d.paymentDate = this.paymentDate
       		
-      		this.validityDate = d.dateAndTimeOfValidity
+      		this.validityDate = todayDate + (d.numberOfSession * 86400000)
       		this.validityDate = new Date(this.validityDate)
       		this.validityDate = this.validityDate.toLocaleDateString('en-CA')
       		d.dateAndTimeOfValidity = this.validityDate
@@ -79,7 +92,46 @@ Vue.component("customer-dues", {
 					
 					axios
 						.post('rest/dues', m)
-						.then(response => toast("Uspesno UPDEJTOVANA clanarina"))
+						.then(response => 
+							{
+								toast("Uspesno UPDEJTOVANA clanarina")
+								axios
+									.get('rest/dues/getDueByCustomerId/' + this.customer.username)
+									.then(response => this.dueByCustomer = response.data)
+									
+								this.paymentDate = new Date()
+					      		let dt = new Date()
+					      		let todayDate = dt.getTime()
+					      		  		
+					      		this.paymentDate = this.paymentDate.toLocaleDateString('en-CA')
+					      		this.dueByCustomer.paymentDate = this.paymentDate
+					      		
+					      		this.validityDate = todayDate + (m.numberOfSession * 86400000)
+					      		this.validityDate = new Date(this.validityDate)
+					      		this.validityDate = this.validityDate.toLocaleDateString('en-CA')
+					      		this.dueByCustomer.dateAndTimeOfValidity = this.validityDate
+					      		
+					      		this.dueByCustomer.type = m.type
+					      		this.dueByCustomer.status = m.status
+					      		this.dueByCustomer.numberOfSession = m.numberOfSession
+					      		this.dueByCustomer.price = m.price
+
+									
+								this.customer.due = this.dueByCustomer
+								
+								this.customerBirth = this.customer.birthdate
+					      		this.customerBirth = new Date(this.customerBirth)
+					      		this.customerBirth = this.customerBirth.toLocaleDateString('en-CA')
+					      		this.customer.birthdate = this.customerBirth
+      		
+								axios
+									.post('rest/customers', this.customer)
+									.then(response => toast("USPESNO AZURIRAN KASTOMER"))
+									.catch(error => {
+											alert(error.message + " GRESKA U UPDEJTOVANJU KASTOMERA");
+							})
+															
+							})
 						.catch(error => {
 								alert(error.message + " GRESKA U UPDEJTOVANJU CLANARINE");
 							})
@@ -92,12 +144,62 @@ Vue.component("customer-dues", {
 			if(this.exists === false){
 					axios
 						.post('rest/dues', m)
-						.then(response => toast("Uspesno kreirana clanarina"))
+						.then(response => 
+						{
+							toast("Uspesno kreirana clanarina")
+								axios
+							       .get('rest/dues/')
+							       .then(response => (this.dues = response.data))
+							       console.log(this.dues)
+							       
+							    axios
+									.get('rest/dues/getDueByCustomerId/' + this.customer.username)
+									.then(response => this.dueByCustomer = response.data)
+									console.log(this.dueByCustomer)
+									
+									this.paymentDate = new Date()
+						      		let dt = new Date()
+						      		let todayDate = dt.getTime()
+						      		  		
+						      		this.paymentDate = this.paymentDate.toLocaleDateString('en-CA')
+						      		this.dueByCustomer.paymentDate = this.paymentDate
+						      		
+						      		this.validityDate = todayDate + (m.numberOfSession * 86400000)
+						      		this.validityDate = new Date(this.validityDate)
+						      		this.validityDate = this.validityDate.toLocaleDateString('en-CA')
+						      		this.dueByCustomer.dateAndTimeOfValidity = this.validityDate
+						      		
+						      		this.dueByCustomer.type = m.type
+						      		this.dueByCustomer.status = m.status
+						      		this.dueByCustomer.numberOfSession = m.numberOfSession
+						      		this.dueByCustomer.price = m.price
+									
+									this.customer.due = this.dueByCustomer
+									
+									this.customerBirth = this.customer.birthdate
+						      		this.customerBirth = new Date(this.customerBirth)
+						      		this.customerBirth = this.customerBirth.toLocaleDateString('en-CA')
+						      		this.customer.birthdate = this.customerBirth
+								axios
+									.post('rest/customers', this.customer)
+									.then(response => toast("USPESNO AZURIRAN KASTOMER"))
+									.catch(error => {
+											
+											alert(error.message + " GRESKA U UPDEJTOVANJU KASTOMERA")
+											
+											});																		
+							})
 						.catch(error => {
 								alert(error.message + " GRESKA U KREIRANJU CLANARINE");
 							})
 			
 			}
+		}
+	},
+	filters : {
+		dateFormat : function(value, format){
+			var parsed = moment(value);
+			return parsed.format(format);
 		}
 	},
 	mounted () {          	
@@ -116,9 +218,14 @@ Vue.component("customer-dues", {
 								if(d.customerId === "")
 									this.predefinedDues.push(d)
 						   }
-
+						
+						axios
+							.get('rest/dues/getDueByCustomerId/' + this.customer.username)
+							.then(response => this.dueByCustomer = response.data)
+							console.log(this.dueByCustomer)
 	    		})
 	    	})
+
           })
     },
 });
