@@ -1,47 +1,90 @@
 {
-	"customercina": {
-	    "username": "customercina",
-	    "password": "customercina",
-	    "name": "Nenad",
-	    "surname": "Sredojevi?",
-	    "birthdate" : "Jul 11, 2000, 12:00:00 AM",
-	    "gender" : "MALE",
-	    "userRole" : "CUSTOMER",
-	    "deleted": false,
-	    "banned": false,
-	    "visitedFacilities" : null,
-	    "customerType" : null,
-	    "collectedPoints": 0.0,
-	    "due" : null
+  "customercina": {
+    "collectedPoints": 0.0,
+    "due": {
+      "id": "mtstflv5ul",
+      "type": "Mesecna",
+      "paymentDate": "Jul 10, 2022, 2:00:00 AM",
+      "dateAndTimeOfValidity": "Aug 9, 2022, 2:00:00 AM",
+      "price": 2000.0,
+      "customerId": "customercina",
+      "status": true,
+      "numberOfSession": 30.0
+    },
+    "username": "customercina",
+    "password": "customercina",
+    "name": "Nenad",
+    "surname": "Sredojevi?",
+    "birthdate": "Jul 11, 2000, 12:00:00 AM",
+    "gender": "MALE",
+    "userRole": "CUSTOMER",
+    "deleted": false,
+    "banned": false
   },
-  	"customer": {
-	    "username": "customer",
-	    "password": "customer",
-	    "name": "shone",
-	    "surname": "nenad",
-	    "birthdate" : "Jun 17, 2005, 12:00:00 AM",
-	    "gender" : "MALE",
-	    "userRole" : "CUSTOMER",
-	    "deleted": false,
-	    "banned": false,
-	    "visitedFacilities" : null,
-	    "customerType" : null,
-	    "collectedPoints": 0.0,
-	    "due" : null
+  "customer": {
+    "collectedPoints": 0.0,
+    "due": {
+      "id": "75kqa6tu7y",
+      "type": "3 meseca",
+      "paymentDate": "Jul 10, 2022, 2:00:00 AM",
+      "dateAndTimeOfValidity": "Oct 8, 2022, 2:00:00 AM",
+      "price": 5000.0,
+      "customerId": "customer",
+      "status": true,
+      "numberOfSession": 90.0
+    },
+    "username": "customer",
+    "password": "customer",
+    "name": "shone",
+    "surname": "nenad",
+    "birthdate": "Jun 17, 2005, 12:00:00 AM",
+    "gender": "MALE",
+    "userRole": "CUSTOMER",
+    "deleted": false,
+    "banned": false
   },
-  	"custom": {
-	    "username": "custom",
-	    "password": "custom",
-	    "name": "doktor",
-	    "surname": "doktorcina",
-	    "birthdate": "Jul 17, 2022, 12:00:00 AM",
-	    "gender": "MALE",
-	    "userRole": "CUSTOMER",
-	    "deleted": false,
-	    "banned": false,
-	    "visitedFacilities" : null,
-	    "customerType" : null,
-	    "collectedPoints": 0.0,
-	    "due" : null
-  }	
+  "custom": {
+    "collectedPoints": 0.0,
+    "due": {
+      "id": "q7tmyr895c",
+      "type": "Mesecna",
+      "paymentDate": "Jul 10, 2022, 2:00:00 AM",
+      "dateAndTimeOfValidity": "Aug 9, 2022, 2:00:00 AM",
+      "price": 2000.0,
+      "customerId": "custom",
+      "status": true,
+      "numberOfSession": 30.0
+    },
+    "username": "custom",
+    "password": "custom",
+    "name": "doktor",
+    "surname": "doktorcina",
+    "birthdate": "Jul 31, 2022, 12:00:00 AM",
+    "gender": "MALE",
+    "userRole": "CUSTOMER",
+    "deleted": false,
+    "banned": false
+  },
+  "cs": {
+    "collectedPoints": 0.0,
+    "due": {
+      "id": "egp24hyyfp",
+      "type": "6 meseci",
+      "paymentDate": "Jul 10, 2022, 2:00:00 AM",
+      "dateAndTimeOfValidity": "Jan 6, 2023, 1:00:00 AM",
+      "price": 8500.0,
+      "customerId": "cs",
+      "status": true,
+      "numberOfSession": 180.0
+    },
+    "username": "cs",
+    "password": "cs",
+    "name": "cs",
+    "surname": "cs",
+    "birthdate": "Jul 21, 2022, 12:00:00 AM",
+    "gender": "MALE",
+    "userRole": "CUSTOMER",
+    "deleted": false,
+    "banned": false
+  }
 }

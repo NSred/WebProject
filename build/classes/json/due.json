@@ -1,42 +1,82 @@
 {
   "1234567890": {
-	"id": "1234567890",
+    "id": "1234567890",
     "type": "Mesecna",
     "paymentDate": "Jun 15, 2022, 2:36:51 AM",
     "dateAndTimeOfValidity": "Jun 30, 2022, 2:36:51 AM",
-    "price": 2000,
+    "price": 2000.0,
     "customerId": "",
     "status": true,
-    "numberOfSession": 30
+    "numberOfSession": 30.0
   },
   "0987654321": {
-	"id": "0987654321",
+    "id": "0987654321",
     "type": "Godisnja",
     "paymentDate": "Jun 15, 2022, 2:36:51 AM",
     "dateAndTimeOfValidity": "Jun 30, 2022, 2:36:51 AM",
-    "price": 15000,
+    "price": 15000.0,
     "customerId": "",
     "status": true,
-    "numberOfSession": 300
+    "numberOfSession": 360.0
   },
   "1234567809": {
-	"id": "1234567809",
-    "type": "Mesecna",
+    "id": "1234567809",
+    "type": "3 meseca",
     "paymentDate": "Jun 15, 2022, 2:36:51 AM",
     "dateAndTimeOfValidity": "Jun 30, 2022, 2:36:51 AM",
-    "price": 2000,
+    "price": 5000.0,
     "customerId": "",
     "status": true,
-    "numberOfSession": 30
+    "numberOfSession": 90.0
   },
   "1234576890": {
-	"id": "1234576890",
-    "type": "Godisnja",
+    "id": "1234576890",
+    "type": "6 meseci",
     "paymentDate": "Jun 15, 2022, 2:36:51 AM",
     "dateAndTimeOfValidity": "Jun 30, 2022, 2:36:51 AM",
-    "price": 18000,
+    "price": 8500.0,
     "customerId": "",
     "status": true,
-    "numberOfSession": 350
+    "numberOfSession": 180.0
+  },
+  "75kqa6tu7y": {
+    "id": "75kqa6tu7y",
+    "type": "3 meseca",
+    "paymentDate": "Jul 10, 2022, 12:00:00 AM",
+    "dateAndTimeOfValidity": "Oct 8, 2022, 12:00:00 AM",
+    "price": 5000.0,
+    "customerId": "customer",
+    "status": false,
+    "numberOfSession": 90.0
+  },
+  "mtstflv5ul": {
+    "id": "mtstflv5ul",
+    "type": "Mesecna",
+    "paymentDate": "Jul 10, 2022, 12:00:00 AM",
+    "dateAndTimeOfValidity": "Aug 9, 2022, 12:00:00 AM",
+    "price": 2000.0,
+    "customerId": "customercina",
+    "status": false,
+    "numberOfSession": 30.0
+  },
+  "q7tmyr895c": {
+    "id": "q7tmyr895c",
+    "type": "Mesecna",
+    "paymentDate": "Jul 10, 2022, 12:00:00 AM",
+    "dateAndTimeOfValidity": "Aug 9, 2022, 12:00:00 AM",
+    "price": 2000.0,
+    "customerId": "custom",
+    "status": false,
+    "numberOfSession": 30.0
+  },
+  "egp24hyyfp": {
+    "id": "egp24hyyfp",
+    "type": "6 meseci",
+    "paymentDate": "Jul 10, 2022, 12:00:00 AM",
+    "dateAndTimeOfValidity": "Jan 6, 2023, 12:00:00 AM",
+    "price": 8500.0,
+    "customerId": "cs",
+    "status": false,
+    "numberOfSession": 180.0
   }
 }
