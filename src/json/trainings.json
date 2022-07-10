@@ -28,5 +28,15 @@
     "description": "sjajan trening",
     "deleted": false,
     "imageName": "images/sauna.png"
+  },
+  "form up2": {
+    "name": "form up2",
+    "type": "Personal trainings",
+    "sportFacilityId": "3",
+    "durationInMinutes": 60,
+    "trainerId": "trainer",
+    "description": "MASAAA",
+    "deleted": false,
+    "imageName": "images/personalTraining.png"
   }
 }
