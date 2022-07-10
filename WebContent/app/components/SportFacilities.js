@@ -52,10 +52,7 @@ Vue.component("sport-facilities", {
 	</section>	
 		
 		</body>
-	</html>
-	
-	
-	
+	</html>	
 	`,
 	methods : {
 		ConvertWorking: function(sportFacility) {

@@ -85,6 +85,22 @@ public class TrainingHistoryService {
     		}
     	}
         return treningHistoryToFill;
+    }
+    
+    @GET
+    @Path("/getTrainingHistoryByCustomerId/{customerId}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public ArrayList<TrainingHistory> getTrainingHistoryByCustomerId(@PathParam("customerId") String customerId) {
+    	trainingHistoryDao.setBasePath(getContext());
+    	
+    	ArrayList<TrainingHistory> treningHistoryToFill = new ArrayList<TrainingHistory>();
+    	ArrayList<TrainingHistory> trainingHistory = trainingHistoryDao.getAllToList();
+    	for(TrainingHistory th : trainingHistory) {
+    		if(th.getCustomerId().equals(customerId)) {
+    			treningHistoryToFill.add(th);
+    		}
+    	}
+        return treningHistoryToFill;
     }     
 
     @POST

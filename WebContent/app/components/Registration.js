@@ -96,7 +96,7 @@ Vue.component("register-user", {
 		createCustomer: function(customer) {
 			
 			var c = {username:customer.username, password:customer.password, name:customer.name, surname:customer.surname,
-					birthdate:customer.birthdate, gender:this.gender, userRole:'CUSTOMER', deleted:false, banned : false,  visitedFacilities: null,
+					birthdate:customer.birthdate, gender:this.gender, userRole:'CUSTOMER', deleted:false, banned : false,  visitedFacilities: [],
 					customerType:null, collectedPoints:0.0, due : null}					
 			axios
 	          .post('rest/customers/', c)
