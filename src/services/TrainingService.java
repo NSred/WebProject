@@ -24,8 +24,9 @@ import org.glassfish.jersey.media.multipart.FormDataParam;
 
 import beans.Trainer;
 import beans.Training;
-
+import beans.TrainingHistory;
 import dao.TrainingDao;
+import dao.TrainingHistoryDao;
 import dto.TrainingDTO;
 
 
@@ -33,6 +34,7 @@ import dto.TrainingDTO;
 public class TrainingService {
 
 	TrainingDao trainingDao = new TrainingDao();
+	TrainingHistoryDao trainingHistoryDao = new TrainingHistoryDao();
     
     @Context
     ServletContext ctx;
@@ -113,6 +115,24 @@ public class TrainingService {
 	public Training getTrainingById(@PathParam("trainingId") String trainingId) {
 		trainingDao.setBasePath(getContext());
 		return trainingDao.getById(trainingId);
+	}
+    
+    @POST
+	@Path("/getTrainingsByTrainingHistory")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public ArrayList<Training> getTrainingsByTrainingHistory(ArrayList<TrainingHistory> trainingHistory) {
+		trainingHistoryDao.setBasePath(getContext());
+		trainingDao.setBasePath(getContext());
+		
+		ArrayList<Training> trainings = new ArrayList<Training>();
+		for(TrainingHistory th : trainingHistory) {
+			Training tr = getTrainingById(th.getTrainingId());
+			if(th.getTrainingId().equals(tr.getName())) {
+				trainings.add(tr);
+			}
+		}
+		return trainings;
 	}
 
     @POST

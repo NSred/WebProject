@@ -108,12 +108,23 @@ Vue.component("customer-details-view", {
 										      		
 		      		this.customer.birthdate = new Date(this.customer.birthdate)  		
 		      		this.customer.birthdate = this.customer.birthdate.toLocaleDateString('en-CA')
+		      		
+		      		/*console.log(this.customer)
+		      		console.log(this.customer.visitedFacilities)
+		      		console.log(this.sportFacility)*/
+		      		
+		      		/*if(this.customer.visitedFacilities.lenght === 0){
+						let visited = []
+						visited.push(this.sportFacility)
+						this.customer.visitedFacilities = visited
+					}else{
+						this.cutomer.visitedFacilities.push(this.sportFacility)
+					}*/
 		      				      				      		      		
 					axios
 						.post('rest/customers', this.customer)
 						.then(response => {toast("USPESNO AZURIRAN KASTOMER")
-														
-							})
+
 					})
 					
 					let date = new Date()
@@ -127,6 +138,7 @@ Vue.component("customer-details-view", {
 	      				.then(response => toast("USPESNO UPISAN TRENING U ISTORIJU"))
 	      				.catch(error => alert(error.message + " GRESKA U UPISIVANJU TRENINGA"))					
 				
+				})
 			}
 			else {
 				alert("NEMATE DOVOLJNO TERMINA")

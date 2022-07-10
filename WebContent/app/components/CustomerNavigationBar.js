@@ -20,7 +20,7 @@ Vue.component("customer-navigation", {
         <nav class="navigation-menu">
           <a href="#/customer"><i class="fas fa-home home"></i> Home</a>
           <a href="#/customer/dues"></i> Membership</a>
-          <a href="#"></i> Services</a>
+          <a href="#/customer/trainingsView"></i> Trainings</a>
           <a href="#/customer/myProfile"></i> My Profile</a>
           <a href="#"></i> Contact</a>
           <a href="#/login" class="aj_btn" v-on:click="logOut()"> <i class="fas fa-lock" aria-hidden="true"></i>
