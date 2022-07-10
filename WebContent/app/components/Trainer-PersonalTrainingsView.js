@@ -9,7 +9,8 @@ Vue.component("trainer-personal", {
 			mode : "BROWSE",
 			trainingsHistoryByTrainingId : [],
 			trainingsHistoryByTrainingIdAndTrainerId : [],
-			birth : ""
+			birth : "",
+			trainingByTypeAndTrainer : []
 		}
 	},
 	
@@ -42,7 +43,7 @@ Vue.component("trainer-personal", {
 	
 	    <div class="box-container">
 	
-	        <div class="box" v-for="tr in trainings">
+	        <div class="box" v-for="tr in trainingByTypeAndTrainer">
 	            <a href="#" class="fas fa-heart"></a>
 	            <a href="#" class="fas fa-eye"></a>
 	            <img :src="tr.imageName" alt="JEBISE"/>
@@ -170,16 +171,20 @@ Vue.component("trainer-personal", {
           			axios
           				.get('rest/trainings/getTrainingsByTrainerId/' + this.trainer.username, this.trainer)
           				.then(response => {(this.trainings = response.data)
-          				
-          					axios
+          				for(let tr of this.trainings){
+							if(tr.type === this.trainingType){
+								this.trainingByTypeAndTrainer.push(tr)
+							}
+						}
+          					/*axios
 		          				.get('rest/trainings/getTrainingsByTrainingType/' + this.trainingType)
-		          				.then(response => {(this.trainings = response.data)
+		          				.then(response => {(this.trainings = response.data)*/
 		          				
 		          					axios
 		          						.get('rest/trainingsHistory')
 		          						.then(response => this.trainingsHistory = response.data)        				
           				})
-          		})
+          		/*})*/
            })
         })	
     },

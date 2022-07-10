@@ -4,7 +4,8 @@ Vue.component("trainer-group", {
 			trainings: null,
 			user : {},
 			trainer : {},
-			trainingType : "Group trainings"
+			trainingType : "Group trainings",
+			trainingByTypeAndTrainer : []
 		}
 	},
 	
@@ -37,7 +38,7 @@ Vue.component("trainer-group", {
 	
 	    <div class="box-container">
 	
-	        <div class="box" v-for="tr in trainings">
+	        <div class="box" v-for="tr in trainingByTypeAndTrainer">
 	            <a href="#" class="fas fa-heart"></a>
 	            <a href="#" class="fas fa-eye"></a>
 	            <img :src="tr.imageName" alt="JEBISE"/>
@@ -86,12 +87,16 @@ Vue.component("trainer-group", {
           			axios
           				.get('rest/trainings/getTrainingsByTrainerId/' + this.trainer.username, this.trainer)
           				.then(response => {(this.trainings = response.data)
-          				
-          					axios
+          				for(let tr of this.trainings){
+							if(tr.type === this.trainingType){
+								this.trainingByTypeAndTrainer.push(tr)
+							}
+						}
+          					/*axios
 		          				.get('rest/trainings/getTrainingsByTrainingType/' + this.trainingType)
-		          				.then(response => {(this.trainings = response.data)
+		          				.then(response => {(this.trainingByTypeAndTrainer = response.data)
           				
-          				})
+          				})*/
           		})
            })
         })	

@@ -38,5 +38,25 @@
     "description": "MASAAA",
     "deleted": false,
     "imageName": "images/personalTraining.png"
+  },
+  "fitness3": {
+    "name": "fitness3",
+    "type": "Personal trainings",
+    "sportFacilityId": "3",
+    "durationInMinutes": 60,
+    "trainerId": "trenercina",
+    "description": "MASAAA",
+    "deleted": false,
+    "imageName": "images/personalTraining.png"
+  },
+  "hit i grit": {
+    "name": "hit i grit",
+    "type": "Group trainings",
+    "sportFacilityId": "3",
+    "durationInMinutes": 90,
+    "trainerId": "trenercina",
+    "description": "MASAAA",
+    "deleted": false,
+    "imageName": "images/personalTraining.png"
   }
 }
