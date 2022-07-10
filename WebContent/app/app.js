@@ -5,7 +5,7 @@ const Login = {template: '<div><navigation-bar></navigation-bar><login-user></lo
 const Admin = {template: '<div><admin-navigation></admin-navigation><admin-home></admin-home></div>'}
 const Manager = {template: '<div><manager-navigation></manager-navigation><sport-facilities></sport-facilities></div>'}
 const Trainer = {template: '<div><trainer-navigation></trainer-navigation><sport-facilities></sport-facilities></div>'}
-const Customer = {template: '<div><customer-navigation></customer-navigation><sport-facilities></sport-facilities></div>'}
+const Customer = {template: '<div><customer-navigation></customer-navigation><customer-facilities></customer-facilities></div>'}
 const AdminManagersView = {template: '<div><admin-navigation></admin-navigation><admin-managers></admin-managers></div>'}
 const AdminTrainersView = {template: '<div><admin-navigation></admin-navigation><admin-trainers></admin-trainers></div>'}
 const AdminCustomersView = {template: '<div><admin-navigation></admin-navigation><admin-customers></admin-customers></div>'}
@@ -25,6 +25,10 @@ const TrainerTrainingsView = {template: '<div><trainer-navigation></trainer-navi
 const TrainerPersonalTrainingsView = {template: '<div><trainer-navigation></trainer-navigation><trainer-personal></trainer-personal></div>'}
 const TrainerGroupTrainingsView = {template: '<div><trainer-navigation></trainer-navigation><trainer-group></trainer-group></div>'}
 const CustomerDues = {template: '<div><customer-navigation></customer-navigation><customer-dues></customer-dues></div> '}
+const CustomerFacilityDetailsView = {template: '<div><customer-navigation></customer-navigation><customer-details-view></customer-details-view></div> '}
+const AdminFacilityDetailsView = {template: '<div><admin-navigation></admin-navigation><details-view></details-view></div> '}
+const TrainerFacilityDetailsView = {template: '<div><trainer-navigation></trainer-navigation><details-view></details-view></div> '}
+const ManagerFacilityDetailsView = {template: '<div><manager-navigation></manager-navigation><details-view></details-view></div> '}
 
 const router = new VueRouter({
 	mode: 'hash',
@@ -109,6 +113,18 @@ const router = new VueRouter({
 		},
 		{
 			path: '/customer/dues' , component: CustomerDues
+		},
+		{
+			path: '/admin/detailsView/:id?', name : 'AdminDetailsView', component: AdminFacilityDetailsView
+		},
+		{
+			path: '/trainer/detailsView/:id?', name : 'TrainerDetailsView', component: TrainerFacilityDetailsView
+		},
+		{
+			path: '/manager/detailsView/:id?', name : 'ManagerDetailsView', component: ManagerFacilityDetailsView
+		},
+		{
+			path: '/customer/detailsView/:id?', name : 'CustomerDetailsView', component: CustomerFacilityDetailsView
 		}
 	]
 });

@@ -83,10 +83,11 @@ Vue.component("trainer-personal", {
 	            <a href="#" class="fas fa-heart"></a>
 	            <a href="#" class="fas fa-eye"></a>
 	            <h3>{{th.trainingId}}</h3>
-	            <div>
+	            <h4>
 	            	Trainer: {{th.trainerId}}
-	            </div>
-	            <h4>{{th.trainingDate|dateFormat('DD-MM-YYYY')}}</h4>
+	            </h4>
+	            <h4>Customer : {{th.customerId}}</h4>
+	            <span>{{th.trainingDate|dateFormat('DD-MM-YYYY')}}</span>
 	            <br></br>
 	            <div class="btn" v-on:click="cancelTraining(th)">Cancel Training</div>
 	        </div>

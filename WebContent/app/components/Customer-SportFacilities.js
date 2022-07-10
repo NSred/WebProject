@@ -1,8 +1,7 @@
-Vue.component("sport-facilities", {
+Vue.component("customer-facilities", {
 	data: function(){
 		return{
 			sportFacilities: null,
-			user : {}
 		}
 	},
 	
@@ -66,28 +65,13 @@ Vue.component("sport-facilities", {
 				return "Ne radi";
 		},
 		redirectWithParam : function(id){
-			if(this.user.userRole !== undefined){
-				if(this.user.userRole === "ADMIN"){
-					router.push({ name : 'AdminDetailsView', params:{id}});
-				} else if(this.user.userRole === "MANAGER"){
-					router.push({ name : 'TrainerDetailsView', params:{id}});
-				} else if(this.user.userRole === "COACH"){
-					router.push({ name : 'ManagerDetailsView', params:{id}});
-				} else if(this.user.userRole === "CUSTOMER"){
-					router.push({ name : 'CustomerDetailsView', params:{id}});
-				}  
-			}
+			router.push({ name : 'CustomerDetailsView', params:{id}});
 		}
+
 	},
 	mounted () {
         axios
           .get('rest/sportFacilities/')
-          .then(response => {(this.sportFacilities = response.data)
-          
-          	axios
-	          .get('rest/login/loggedUser')
-	          .then(response => {(this.user = response.data)
-          })
-       })
+          .then(response => (this.sportFacilities = response.data))
     },
 });
