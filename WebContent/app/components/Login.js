@@ -10,9 +10,9 @@ Vue.component("login-user", {
 	},
 	template: `
 	
-	<div class="container">
+	<div class="container2">
       <form @submit.prevent="LogIn" autocomplete="on">
-      <h1>Log In</h1>
+      <h1><font color="white">Log In</font></h1>
       
         <!--Username-->
     	<div class="box">
@@ -48,7 +48,7 @@ Vue.component("login-user", {
     		<!---Submit Button----->
     		
     		<tr>
-					<td><a href="#/register">Not Registered?</a></td>
+					<td><a href="#/register"><font color="ff6600">Not Registered?</font></a></td>
 				</tr>
 	
 	 </form>

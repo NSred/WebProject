@@ -10,9 +10,9 @@ Vue.component("admin-userRegistration", {
 
 	template: `
 	
-	<div class="container">
+	<div class="container2">
       <form @submit.prevent="createUser(newUser)" autocomplete="on">
-      <h1>User Registration</h1>
+      <h1><font color="white">User Registration</font></h1>
         <!--First name-->
     		<div class="box">
           <label for="firstName" class="fl fontLabel"> First Name: </label>

@@ -79,9 +79,7 @@ Vue.component("trainer-personal", {
 	    
 	    <div class="box-container" v-show="mode=='SCHEDULE'">
 
-	        <div class="box" v-for="th in trainingsHistoryByTrainingIdAndTrainerId">
-	            <a href="#" class="fas fa-heart"></a>
-	            <a href="#" class="fas fa-eye"></a>
+	        <div class="trainer-box" v-for="th in trainingsHistoryByTrainingIdAndTrainerId">
 	            <h3>{{th.trainingId}}</h3>
 	            <h4>
 	            	Trainer: {{th.trainerId}}

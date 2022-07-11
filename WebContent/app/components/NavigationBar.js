@@ -15,7 +15,7 @@ Vue.component("navigation-bar", {
   <body>
     <header>
       <div class="inner-width">
-        <a href="#/"><h1 class="logo">Clean<span style="color:#273b91;">FIT</span></h1></a>
+        <a href="#/"><h1 class="logo">Clean<span><font color="ff6600">FIT</font></span></h1></a>
         <i class="menu-toggle-btn fas fa-bars"></i>
         <nav class="navigation-menu">
           <a href="#/"><i class="fas fa-home home"></i> Home</a>

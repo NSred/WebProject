@@ -13,13 +13,49 @@ body{
 	height: 600px;
 	padding-bottom: 20px;
 	position: absolute;
+	top:65%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	margin: auto;
+  padding: 40px 50px 20px 50px;
+}
+
+.container3{
+	background: #2d3e3f;
+	width: 350px;
+	height: 580px;
+	padding-bottom: 20px;
+	position: absolute;
+	top:60%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	margin: auto;
+  padding: 35px 50px 20px 50px;
+}
+
+.container2{
+	background: #2d3e3f;
+	width: 350px;
+	height: 400px;
+	padding-bottom: 50px;
+	position: absolute;
 	top:50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	margin: auto;
-  padding: 70px 50px 20px 50px;
+  padding: 40px 50px 20px 50px;
 }
 
+.manager-btn{
+	/* float: right; */
+	border: none;
+	color: white;
+	width: 150px;
+	height: 35px;
+	background: #ff6600;
+	text-transform: uppercase;
+  cursor: pointer;
+}
 
 .fl{
 	float: left;

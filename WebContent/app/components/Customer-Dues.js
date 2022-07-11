@@ -46,9 +46,7 @@ Vue.component("customer-dues", {
 	
 	    <div class="box-container">
 	
-	        <div class="box" v-for="due in predefinedDues">
-	            <a href="#" class="fas fa-heart"></a>
-	            <a href="#" class="fas fa-eye"></a>
+	        <div class="trainer-box" v-for="due in predefinedDues">
 	            <h3>{{due.type}}</h3>	           
 	            <span>{{due.price}} din</span>
 	            <h3>
