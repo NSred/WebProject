@@ -48,6 +48,7 @@ Vue.component("admin-managers", {
 	            <span>{{ConvertBanned(ru)}}</span>
 	            <br></br>
 	            <div><a href="#" class="btn">Details</a></div>
+	            <div class="btn" v-on:click="deleteManager(ru)">Delete</div>
 	        </div>
 	        
 	    </div>
@@ -72,6 +73,17 @@ Vue.component("admin-managers", {
 		ShowCustomers : function(){
 			router.push({ path : '/admin/customersView'});
 		},
+		deleteManager(m){
+			axios
+				.delete('rest/managers/' + m.username)
+				.then(response => {toast("USPESO OBRISAN MANAGER")
+				
+					axios
+			          .get('rest/managers/')
+			          .then(response => (this.registeredManagers = response.data))
+				})
+				.catch(error => alert(error.message + "GRESKA U BRISANJU MANAGERA"))
+		}
 	},
 	mounted () {
         axios

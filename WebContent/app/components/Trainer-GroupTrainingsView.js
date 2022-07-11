@@ -38,7 +38,7 @@ Vue.component("trainer-group", {
 	
 	    <div class="box-container">
 	
-	        <div class="box" v-for="tr in trainingByTypeAndTrainer">
+	        <div class="box" v-for="tr in trainingByTypeAndTrainer" v-if="tr.deleted === false">
 	            <a href="#" class="fas fa-heart"></a>
 	            <a href="#" class="fas fa-eye"></a>
 	            <img :src="tr.imageName" alt="JEBISE"/>
@@ -50,7 +50,6 @@ Vue.component("trainer-group", {
 	            <span>{{tr.durationInMinutes}} min</span>
 	            <br></br>
 	            <br></br>
-	            <div class="btn" v-on:click="redirectWithParam(tr.name)">Edit</div>
 	        </div>
 	        
 	    </div>
@@ -61,9 +60,6 @@ Vue.component("trainer-group", {
 	</html>	
 	`,
 	methods :  {
-		redirectWithParam : function(id){
-			router.push({ name : 'editTraining', params:{id}});
-		},
 		ShowPersonal : function(){
 			router.push({ path : '/trainer/personalTrainingsView'});
 		},

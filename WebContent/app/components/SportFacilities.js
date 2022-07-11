@@ -2,7 +2,8 @@ Vue.component("sport-facilities", {
 	data: function(){
 		return{
 			sportFacilities: null,
-			user : {}
+			user : {},
+			managers : null
 		}
 	},
 	
@@ -45,6 +46,7 @@ Vue.component("sport-facilities", {
 	            <span>{{ConvertWorking(sf)}}</span>
 	            <br></br>
 	            <div class="btn" v-on:click="redirectWithParam(sf.sportFacilityId)">Details</div>
+	            <div class="btn" v-show="user.userRole === 'ADMIN'" v-on:click="deleteFacility(sf)">Delete</div>
 	        </div>
 	        
 	    </div>
@@ -67,13 +69,46 @@ Vue.component("sport-facilities", {
 				if(this.user.userRole === "ADMIN"){
 					router.push({ name : 'AdminDetailsView', params:{id}});
 				} else if(this.user.userRole === "MANAGER"){
-					router.push({ name : 'TrainerDetailsView', params:{id}});
-				} else if(this.user.userRole === "COACH"){
 					router.push({ name : 'ManagerDetailsView', params:{id}});
+				} else if(this.user.userRole === "COACH"){
+					router.push({ name : 'TrainerDetailsView', params:{id}});
 				} else if(this.user.userRole === "CUSTOMER"){
 					router.push({ name : 'CustomerDetailsView', params:{id}});
 				}  
+			}else{
+				router.push({ name : 'NotLoggedDetailsView', params:{id}});
 			}
+		},
+		deleteFacility : function(sf){
+			axios
+				.delete('rest/sportFacilities/' + sf.sportFacilityId)
+				.then(response => {toast("USPESNO OBRISAN" + sf.name)
+				
+					axios
+			          .get('rest/sportFacilities/')
+			          .then(response => {(this.sportFacilities = response.data)
+			          
+			          axios
+			          	.get('rest/managers')
+			          	.then(response => {(this.managers = response.data)
+			          	console.log(this.managers)
+			          	for(let mng of this.managers){
+							if(mng.sportFacilityId === sf.sportFacilityId){
+								mng.sportFacilityId = ""
+								axios
+								  .put('rest/managers', mng)
+								  .then(response => alert("Uspesno azuriran menadzer"))
+								  .catch(error =>  {
+											alert(error.message + " GRESKA U AZURIRANJU MENADZERA");
+										})
+										break;
+			          	
+			          	}			          	
+							}
+						})													
+			          })
+				})
+				.catch(error => alert(error.message + "GRESKA U BRISANJU "))
 		}
 	},
 	mounted () {
@@ -84,6 +119,7 @@ Vue.component("sport-facilities", {
           	axios
 	          .get('rest/login/loggedUser')
 	          .then(response => {(this.user = response.data)
+	          
           })
        })
     },

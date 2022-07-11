@@ -151,7 +151,7 @@ Vue.component("admin-createFacility", {
 				    this.facilityContent.push(checkbox.value); 
 				}
 				var f = {sportFacilityId : facility.sportFacilityId , name : facility.name, type : facility.type, facilityContent : this.facilityContent, isWorking : facility.isWorking,
-				 location  : facility.location , averageGrade : 0.0, openTime : facility.openTime, closeTime : facility.closeTime, imageName : ""}
+				 location  : facility.location , averageGrade : 0.0, openTime : facility.openTime, closeTime : facility.closeTime, imageName : "images/gym.png"}
 				axios
 		          .post('rest/sportFacilities/', f)
 		          .then(response => alert("Uspesno kreiran FACILITY MRTVI"))

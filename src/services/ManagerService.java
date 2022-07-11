@@ -6,6 +6,7 @@ import java.util.Date;
 
 import javax.servlet.ServletContext;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
@@ -102,5 +103,14 @@ public class ManagerService {
 	public void updateManager(Manager manager) {
 		managerDao.setBasePath(getContext());
 		managerDao.update(manager);
+	}
+	
+	@DELETE
+	@Path("/{managerId}")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+	public void deleteManager(@PathParam("managerId") String managerId) {
+		managerDao.setBasePath(getContext());
+		managerDao.delete(managerId);
 	}
 }

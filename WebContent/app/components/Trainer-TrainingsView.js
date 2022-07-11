@@ -36,7 +36,7 @@ Vue.component("trainer-trainings", {
 	
 	    <div class="box-container">
 	
-	        <div class="box" v-for="tr in trainings">
+	        <div class="box" v-for="tr in trainings" v-if="tr.deleted === false">
 	            <a href="#" class="fas fa-heart"></a>
 	            <a href="#" class="fas fa-eye"></a>
 	            <img :src="tr.imageName" alt="JEBISE"/>
@@ -48,7 +48,6 @@ Vue.component("trainer-trainings", {
 	            <span>{{tr.durationInMinutes}} min</span>
 	            <br></br>
 	            <br></br>
-	            <div class="btn">Details</div>
 	        </div>
 	        
 	    </div>
