@@ -15,7 +15,7 @@ Vue.component("customer-navigation", {
   <body>
     <header>
       <div class="inner-width">
-        <a href="#/customer"><h1 class="logo">Clean<span style="color:#273b91;">FIT</span></h1></a>
+        <a href="#/customer"><h1 class="logo">Clean<span style="color:#ff6600;">FIT</span></h1></a>
         <i class="menu-toggle-btn fas fa-bars"></i>
         <nav class="navigation-menu">
           <a href="#/customer"><i class="fas fa-home home"></i> Home</a>

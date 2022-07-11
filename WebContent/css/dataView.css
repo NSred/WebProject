@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500&display=swap');
 :root{
-    --green:#27ae60;
-    --black:#192a56;
+    --green:#ff6600;
+    --black:#2d3e3f;
     --light-color:#666;
     --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
 }
@@ -49,6 +49,49 @@ section:nth-child(even){
 }
 .facilityDetails-box-container{
 	text-align : center
+}
+
+.trainer-box{
+	padding:2.5rem;
+    background:#fff;
+    border-radius: .5rem;
+    border:.1rem solid rgba(0,0,0,.2);
+    box-shadow: var(--box-shadow);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    height : 20rem;
+    width : 25rem;
+}
+
+.trainer-box div{
+    color:var(--black);
+    font-size: 1.5rem;
+}
+
+.trainer-box h4{
+    color:var(--black);
+    font-size: 1.5rem;
+}
+
+.trainer-box img{
+    height:17rem;
+    margin:1rem 0;
+}
+
+.trainer-box h3{
+    color:var(--black);
+}
+
+.trainer-box .btn{
+    margin-top: 1rem;
+    display: inline-block;
+    font-size: 1.7rem;
+    color:#fff;
+    background: var(--black);
+    border-radius: .5rem;
+    cursor: pointer;
+    padding:.8rem 3rem;
 }
 .membership-box{
 	padding:2.5rem;
@@ -196,7 +239,7 @@ section:nth-child(even){
     z-index: 1000;
     box-shadow: var(--box-shadow); */
     height: 90px;
-  background: #546FE7;
+  background: #2d3e3f;
 }
 
 header .logo{

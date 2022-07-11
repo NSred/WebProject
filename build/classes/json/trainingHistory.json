@@ -1,0 +1,83 @@
+{
+  "1": {
+    "id": "1",
+    "trainingDate": "Jul 9, 2022, 2:36:51 AM",
+    "dateAndTimeOfSign": "Jun 15, 2022, 2:36:51 AM",
+    "trainingId": "form up",
+    "customerId": "customer",
+    "trainerId": "trainer",
+    "deleted": false
+  },
+  "2": {
+    "id": "2",
+    "trainingDate": "Jul 10, 2022, 2:36:51 AM",
+    "dateAndTimeOfSign": "Jun 15, 2022, 2:36:51 AM",
+    "trainingId": "fitness",
+    "customerId": "customer",
+    "trainerId": "trainer",
+    "deleted": false
+  },
+  "3": {
+    "id": "3",
+    "trainingDate": "Jul 15, 2022, 2:36:51 AM",
+    "dateAndTimeOfSign": "Jun 15, 2022, 2:36:51 AM",
+    "trainingId": "form up",
+    "customerId": "customercina",
+    "trainerId": "trenercina",
+    "deleted": false
+  },
+  "4": {
+    "id": "4",
+    "trainingDate": "Jul 22, 2022, 12:00:00 AM",
+    "dateAndTimeOfSign": "Jun 15, 2022, 12:00:00 AM",
+    "trainingId": "form up2",
+    "customerId": "customer",
+    "trainerId": "trainer",
+    "deleted": true
+  },
+  "5": {
+    "id": "5",
+    "trainingDate": "Jul 9, 2022, 2:36:51 AM",
+    "dateAndTimeOfSign": "Jun 15, 2022, 2:36:51 AM",
+    "trainingId": "form up",
+    "customerId": "customer",
+    "trainerId": "trainer",
+    "deleted": false
+  },
+  "6": {
+    "id": "6",
+    "trainingDate": "Jul 9, 2022, 2:36:51 AM",
+    "dateAndTimeOfSign": "Jun 15, 2022, 2:36:51 AM",
+    "trainingId": "form up",
+    "customerId": "customer",
+    "trainerId": "trainer",
+    "deleted": false
+  },
+  "7": {
+    "id": "7",
+    "trainingDate": "Jul 9, 2022, 2:36:51 AM",
+    "dateAndTimeOfSign": "Jun 15, 2022, 2:36:51 AM",
+    "trainingId": "form up",
+    "customerId": "customer",
+    "trainerId": "trainer",
+    "deleted": false
+  },
+  "8": {
+    "id": "8",
+    "trainingDate": "Jul 22, 2022, 12:00:00 AM",
+    "dateAndTimeOfSign": "Jun 15, 2022, 12:00:00 AM",
+    "trainingId": "form up2",
+    "customerId": "customer",
+    "trainerId": "trainer",
+    "deleted": false
+  },
+  "9": {
+    "id": "9",
+    "trainingDate": "Jul 22, 2022, 12:00:00 AM",
+    "dateAndTimeOfSign": "Jun 15, 2022, 12:00:00 AM",
+    "trainingId": "form up2",
+    "customerId": "custom",
+    "trainerId": "trainer",
+    "deleted": true
+  }
+}

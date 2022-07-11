@@ -34,9 +34,7 @@ Vue.component("manager-trainers", {
 	
 	    <div class="box-container">
 	
-	        <div class="box" v-for="t in trainers">
-	            <a href="#" class="fas fa-heart"></a>
-	            <a href="#" class="fas fa-eye"></a>
+	        <div class="trainer-box" v-for="t in trainers">
 	            <h3>{{t.name}} &nbsp {{t.surname}}</h3>
 	            <div>
 	            	{{t.gender}}
@@ -44,7 +42,6 @@ Vue.component("manager-trainers", {
 	            <h4>{{t.birthdate|dateFormat('YYYY-DD-MM')}}</h4>
 	            <span>{{t.username}}</span>
 	            <br></br>	            
-	            <div><a href="#" class="btn">Details</a></div>
 	        </div>
 	        
 	    </div>

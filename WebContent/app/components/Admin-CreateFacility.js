@@ -10,9 +10,9 @@ Vue.component("admin-createFacility", {
 
 	template: `
 	
-	<div class="container">
+	<div class="container3">
       <form @submit.prevent="createFacility(newFacility)" autocomplete="on">
-      <h1>Create Facility</h1>
+      <h1><font color="white">Create Facility</font></h1>
         <!--sportFacilityId-->
     		<div class="box">
           <label for="sportFacilityId" class="fl fontLabel"> Facility ID: </label>
@@ -101,11 +101,11 @@ Vue.component("admin-createFacility", {
     		<!---CONTENT----->
 			<div>
 				<input type="checkbox" name="pl" value="Personal trainings">
-				<label for="Personal"> Personal trainings</label><br>
+				<label for="Personal"><font color="white" size="2px"> Personal trainings</font></label><br>
 				<input type="checkbox" name="pl" value="Group trainings">
-				<label for="Group"> Group trainings</label><br>
+				<label for="Group"><font color="white" size="2px"> Group trainings</font></label><br>
 				<input type="checkbox" name="pl" value="Sauna">
-				<label for="Sauna"> Sauna </label><br>
+				<label for="Sauna"><font color="white" size="2px"> Sauna </font></label><br>
 			</div>
 			
 			<!---manager of facility----->
@@ -125,7 +125,7 @@ Vue.component("admin-createFacility", {
 						</select>
 					
 							
-					<button style="background: #2a6e3e" v-on:click="redirectToRegistration()">Add new manager</button>
+					<button class="manager-btn" v-on:click="redirectToRegistration()"><font color="white">Add new manager</font></button>
 					<br></br>
     		</div>
     		

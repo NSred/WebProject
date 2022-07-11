@@ -10,9 +10,9 @@ Vue.component("edit-training",  {
 
 	template: `
 	
-	<div class="container">
+	<div class="container2">
       <form @submit.prevent="updateTraining(training)" autocomplete="on">
-      <h1>Update Training</h1>
+      <h1><font color="white">Update Training</font></h1>
       
       <!--name-->
     		<div class="box">

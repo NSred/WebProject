@@ -47,7 +47,6 @@ Vue.component("admin-trainers", {
 	            <br></br>
 	            <span>{{ConvertBanned(ru)}}</span>
 	            <br></br>
-	            <div><a href="#" class="btn">Details</a></div>
 	            <div class="btn" v-on:click="deleteTrainer(ru)">Delete</div>
 	        </div>
 	        

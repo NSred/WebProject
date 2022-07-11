@@ -46,8 +46,6 @@ Vue.component("admin-customers", {
 	            <span>{{ru.userRole}}</span>
 	            <br></br>
 	            <span>{{ConvertBanned(ru)}}</span>
-	            <br></br>
-	            <div><a href="#" class="btn">Details</a></div>
 	        </div>
 	        
 	    </div>
