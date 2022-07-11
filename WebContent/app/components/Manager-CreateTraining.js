@@ -9,7 +9,7 @@ Vue.component("manager-training", {
 			facilityContent : [],
 			trainingsInFacility : null,
 			sameName : false,
-			image : ""
+			image : "images/training.png"
 		}
 	},
 
@@ -128,7 +128,7 @@ Vue.component("manager-training", {
 			router.push({ path : '/admin/userRegistration'});
 		},
 		loadFile : function(){
-			var file = $("#fileMedia").files[0];
+			/*var file = $("#fileMedia").files[0];
 			console.log(file)
 			var formData = new FormData();
 			console.log(formData)
@@ -142,7 +142,7 @@ Vue.component("manager-training", {
 				 .catch(error =>  {
 								alert(error.message + " GRESKA U UPPLOADU");
 							})
-				console.log(this.image)
+				console.log(this.image)*/
 		}
 	},
 	mounted () {

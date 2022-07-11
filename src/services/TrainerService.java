@@ -5,6 +5,7 @@ import java.util.Date;
 
 import javax.servlet.ServletContext;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -115,6 +116,15 @@ public class TrainerService  {
         
         trainerDao.create(trainer);
     }
+    
+    @DELETE
+	@Path("/{trainerId}")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+	public void deleteTrainer(@PathParam("trainerId") String trainerId) {
+		trainerDao.setBasePath(getContext());
+		trainerDao.delete(trainerId);
+	}
 
 
 }

@@ -32,7 +32,7 @@ Vue.component("all-trainings", {
 	
 	    <div class="box-container">
 	
-	        <div class="box" v-for="tr in trainings">
+	        <div class="box" v-for="tr in trainings" v-if="tr.deleted === false">
 	            <a href="#" class="fas fa-heart"></a>
 	            <a href="#" class="fas fa-eye"></a>
 	            <img :src="tr.imageName" alt="JEBISE"/>
@@ -45,7 +45,8 @@ Vue.component("all-trainings", {
 	            <br></br>
 	            <br></br>
 	            <div class="btn" v-on:click="redirectWithParam(tr.name)">Edit</div>
-	        </div>
+	            <div class="btn" v-on:click="deleteTraining(tr)">Delete</div>
+	        	</div>
 	        
 	    </div>
 	
@@ -60,6 +61,18 @@ Vue.component("all-trainings", {
 	methods :  {
 		redirectWithParam : function(id){
 			router.push({ name : 'editTraining', params:{id}});
+		},
+		deleteTraining : function(tr){
+			tr.deleted = true
+			axios
+				.post('rest/trainings/noDTOtraining', tr)
+				.then(response => {toast("USPESNO OBRISAN TRENING")
+				
+				axios
+      				.get('rest/trainings/getTrainingsByFacilityId/' + this.manager.sportFacilityId, this.manager)
+      				.then(response => (this.trainings = response.data))					
+				})
+				.catch(error => alert(error.message + "GRESKA U BRISANJU TRENINGA"))
 		}
 	},
 	mounted () {

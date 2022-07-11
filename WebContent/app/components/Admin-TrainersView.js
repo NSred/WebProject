@@ -48,6 +48,7 @@ Vue.component("admin-trainers", {
 	            <span>{{ConvertBanned(ru)}}</span>
 	            <br></br>
 	            <div><a href="#" class="btn">Details</a></div>
+	            <div class="btn" v-on:click="deleteTrainer(ru)">Delete</div>
 	        </div>
 	        
 	    </div>
@@ -72,6 +73,17 @@ Vue.component("admin-trainers", {
 		ShowCustomers : function(){
 			router.push({ path : '/admin/customersView'});
 		},
+		deleteTrainer(m){
+			axios
+				.delete('rest/trainers/' + m.username)
+				.then(response => {toast("USPESO OBRISAN TRAINER")
+				
+					axios
+			          .get('rest/trainers/')
+			          .then(response => (this.registeredTrainers = response.data))
+				})
+				.catch(error => alert(error.message + "GRESKA U BRISANJU TRAINER"))
+		}
 	},
 	mounted () {
         axios

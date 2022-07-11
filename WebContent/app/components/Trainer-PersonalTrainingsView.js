@@ -43,7 +43,7 @@ Vue.component("trainer-personal", {
 	
 	    <div class="box-container">
 	
-	        <div class="box" v-for="tr in trainingByTypeAndTrainer">
+	        <div class="box" v-for="tr in trainingByTypeAndTrainer" v-if="tr.deleted === false">
 	            <a href="#" class="fas fa-heart"></a>
 	            <a href="#" class="fas fa-eye"></a>
 	            <img :src="tr.imageName" alt="JEBISE"/>

@@ -20,9 +20,7 @@ Vue.component("trainer-navigation", {
         <nav class="navigation-menu">
           <a href="#/trainer"><i class="fas fa-home home"></i> Home</a>
           <a href="#/trainer/trainingsView"></i> Your trainings</a>
-          <a href="#"></i> Services</a>
           <a href="#/trainer/myProfile"></i> My Profile</a>
-          <a href="#"></i> Contact</a>
           <a href="#/login" class="aj_btn" v-on:click="logOut()"> <i class="fas fa-lock" aria-hidden="true"></i>
             LOG OUT</a>
         </nav>
@@ -33,7 +31,6 @@ Vue.component("trainer-navigation", {
 	`,
 	methods : {
 		logOut : function(){
-			console.log("sss")
 			axios
 				.post('rest/login/logOut')
 				.then(response => {this.logOutMessage = response.data

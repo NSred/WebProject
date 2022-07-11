@@ -30,6 +30,7 @@ const AdminFacilityDetailsView = {template: '<div><admin-navigation></admin-navi
 const TrainerFacilityDetailsView = {template: '<div><trainer-navigation></trainer-navigation><details-view></details-view></div> '}
 const ManagerFacilityDetailsView = {template: '<div><manager-navigation></manager-navigation><details-view></details-view></div> '}
 const CustomerTrainingsView = {template: '<div><customer-navigation></customer-navigation><customer-trainings></customer-trainings></div> '}
+const NotLoggedFacilityDetailsView = {template: '<div><navigation-bar></navigation-bar><details-view></details-view></div> '}
 
 const router = new VueRouter({
 	mode: 'hash',
@@ -129,6 +130,9 @@ const router = new VueRouter({
 		},
 		{
 			path: '/customer/trainingsView', component: CustomerTrainingsView
+		},
+		{
+			path: '/detailsView', name : 'NotLoggedDetailsView',component: NotLoggedFacilityDetailsView
 		}
 	]
 });

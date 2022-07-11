@@ -9,7 +9,7 @@ Vue.component("customer-dues", {
 			exists : false,
 			predefinedDues : [],
 			dueByCustomer : {},
-			customerBirth : ""
+			customerBirth : "",
 		}
 	},
 	
@@ -34,7 +34,7 @@ Vue.component("customer-dues", {
 	<section class="dishes" id="dishes">
 				
 	    <h3 class="sub-heading"> Clean Fit </h3>
-	    <h1 class="heading"> {{dueByCustomer.customerId}} 's memberships </h1>
+	    <h1 class="heading"> {{customer.username}} 's memberships </h1>
 	    
 	    
 	    <div class="membership-box">
@@ -55,7 +55,8 @@ Vue.component("customer-dues", {
 	            	Sessions: {{due.numberOfSession}}
 	            </h3>
 	            <br></br>
-	            <div><a href="#" v-on:click="createMembership(due)" class="btn">Subcribe</a></div>
+	            <div><a href="#" v-show="due.type !== dueByCustomer.type" v-on:click="createMembership(due)" class="btn">Subscribe</a></div>
+	            <div class="btn"  v-show="due.type === dueByCustomer.type" v-on:click="unsubscribe(dueByCustomer)">Unsubsribe</div>
 	        </div>
 	        
 	    </div>
@@ -68,6 +69,35 @@ Vue.component("customer-dues", {
 	
 	`,
 	methods : {
+		unsubscribe : function(due){
+			axios
+				.delete('rest/dues/' + due.customerId)
+				.then(response => {toast("USPESNO OBRISAN MEMBERSHIP")
+				
+					axios
+							.get('rest/dues/getDueByCustomerId/' + this.customer.username)
+							.then(response => {(this.dueByCustomer = response.data)
+							
+							this.customer.due = {}
+							this.customerBirth = this.customer.birthdate
+				      		this.customerBirth = new Date(this.customerBirth)
+				      		this.customerBirth = this.customerBirth.toLocaleDateString('en-CA')
+				      		this.customer.birthdate = this.customerBirth
+								axios
+									.post('rest/customers', this.customer)
+									.then(response => {toast("USPESNO AZURIRAN KASTOMER")
+									
+										axios
+											.get('rest/dues')
+											.then(response => this.dues = response.data)
+									})									
+							})
+							.catch(error => {
+									alert(error.message + " GRESKA U UPDEJTOVANJU KASTOMERA");
+								})								
+				})
+				.catch(error => alert(error.message + "GRESKA U BRISANJU"))
+		},
 		createMembership : function(d){
 			
 
@@ -149,13 +179,13 @@ Vue.component("customer-dues", {
 							toast("Uspesno kreirana clanarina")
 								axios
 							       .get('rest/dues/')
-							       .then(response => (this.dues = response.data))
+							       .then(response => {(this.dues = response.data)
 							       console.log(this.dues)
 							       
 							    axios
 									.get('rest/dues/getDueByCustomerId/' + this.customer.username)
-									.then(response => this.dueByCustomer = response.data)
-									console.log(this.dueByCustomer)
+									.then(response => {(this.dueByCustomer = response.data)
+									console.log(this.dueByCustomer)									
 									
 									this.paymentDate = new Date()
 						      		let dt = new Date()
@@ -187,7 +217,9 @@ Vue.component("customer-dues", {
 											
 											alert(error.message + " GRESKA U UPDEJTOVANJU KASTOMERA")
 											
-											});																		
+											});	
+									})	
+								})																	
 							})
 						.catch(error => {
 								alert(error.message + " GRESKA U KREIRANJU CLANARINE");

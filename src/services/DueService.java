@@ -6,6 +6,7 @@ import java.util.Date;
 
 import javax.servlet.ServletContext;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -68,7 +69,7 @@ public class DueService  {
     @GET
     @Path("/getDueByCustomerId/{customerId}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Due getDueByTrainerId(@PathParam("customerId") String customerId) {
+    public Due getDueByCustomerId(@PathParam("customerId") String customerId) {
     	dueDao.setBasePath(getContext());
     	
     	Due due = null;
@@ -122,4 +123,15 @@ public class DueService  {
 		 
     	dueDao.create(due);   	
     }
+    
+    @DELETE
+	@Path("/{dueByCustomerId}")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+	public void deleteDue(@PathParam("dueByCustomerId") String dueByCustomerId) {
+		dueDao.setBasePath(getContext());
+		
+		Due due = getDueByCustomerId(dueByCustomerId);
+		dueDao.delete(due.getId());
+	}
 }
