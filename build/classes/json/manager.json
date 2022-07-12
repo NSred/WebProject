@@ -1,19 +1,19 @@
 {
-  "mikiia": {
-    "username": "mikiia",
-    "password": "mikia",
-    "name": "marinko",
-    "surname": "marinko",
+  "m": {
+    "username": "m",
+    "password": "m",
+    "name": "Novak",
+    "surname": "Djokovic",
     "birthdate": "Jun 15, 2022, 2:36:51 AM",
-    "gender": "FEMALE",
+    "gender": "MALE",
     "userRole": "MANAGER",
     "deleted": false,
     "sportFacilityId": "1"
   },
-  "djokaa": {
-    "username": "djokaa",
-    "password": "Djokovic",
-    "name": "Jelena",
+  "mng": {
+    "username": "mng",
+    "password": "mng",
+    "name": "Stefan",
     "surname": "Djokovic",
     "birthdate": "Jun 15, 2022, 2:36:51 AM",
     "gender": "MALE",
@@ -27,9 +27,9 @@
     "name": "Jelena",
     "surname": "Djokovic",
     "birthdate": "Jun 15, 2022, 2:36:51 AM",
-    "gender": "MALE",
+    "gender": "FEMALE",
     "userRole": "MANAGER",
     "deleted": false,
-    "sportFacilityId": "1"
+    "sportFacilityId": "3"
   }
 }

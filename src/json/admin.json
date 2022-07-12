@@ -1,19 +1,9 @@
 {
-	"a": {
-	    "username": "a",
-	    "password": "a",
-	    "name": "PROBA",
-	    "surname": "PROBA",
-	    "birthdate" : "Jul 10, 2003, 2:36:51 AM",
-	    "gender" : "MALE",
-	    "userRole" : "ADMIN",
-	    "deleted": false
-  },
   	"admin": {
 	    "username": "admin",
 	    "password": "admin",
-	    "name": "admin",
-	    "surname": "admin",
+	    "name": "Jedini",
+	    "surname": "Admin",
 	    "birthdate" : "Jun 11, 2000, 2:36:51 AM",
 	    "gender" : "MALE",
 	    "userRole" : "ADMIN",

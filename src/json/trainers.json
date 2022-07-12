@@ -1,19 +1,19 @@
 {
-	"trenercina": {
-	    "username": "trenercina",
-	    "password": "trenerska",
-	    "name": "trenercina",
-	    "surname": "trenerska",
+	"trener": {
+	    "username": "trener",
+	    "password": "trener",
+	    "name": "Pep",
+	    "surname": "Gvardiola",
 	    "birthdate" : "Jul 10, 2003, 2:36:51 AM",
-	    "gender" : "MALE",
+	    "gender" : "FEMALE",
 	    "userRole" : "COACH",
 	    "deleted": false
   },
   "trainer": {
 	    "username": "trainer",
 	    "password": "trainer",
-	    "name": "PROBAA",
-	    "surname": "PROBA",
+	    "name": "Jose",
+	    "surname": "Mourinho",
 	    "birthdate" : "Jun 11, 2000, 2:36:51 AM",
 	    "gender" : "MALE",
 	    "userRole" : "COACH",

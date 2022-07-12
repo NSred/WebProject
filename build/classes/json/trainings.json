@@ -4,7 +4,7 @@
     "type": "Group trainings",
     "sportFacilityId": "1",
     "durationInMinutes": 60,
-    "trainerId": "trainer",
+    "trainerId": "trener",
     "description": "sjajan trening",
     "deleted": false,
     "imageName": "images/groupTraining.png"
@@ -24,13 +24,23 @@
     "type": "Sauna",
     "sportFacilityId": "2",
     "durationInMinutes": 30,
-    "trainerId": "trenercina",
+    "trainerId": "trener",
     "description": "sjajan trening",
     "deleted": false,
     "imageName": "images/sauna.png"
   },
-  "form up2": {
-    "name": "form up2",
+  "body balans": {
+    "name": "body balans",
+    "type": "Personal trainings",
+    "sportFacilityId": "3",
+    "durationInMinutes": 60,
+    "trainerId": "trener",
+    "description": "MASAAA",
+    "deleted": false,
+    "imageName": "images/personalTraining.png"
+  },
+  "kardio": {
+    "name": "kardio",
     "type": "Personal trainings",
     "sportFacilityId": "3",
     "durationInMinutes": 60,
@@ -39,24 +49,14 @@
     "deleted": false,
     "imageName": "images/personalTraining.png"
   },
-  "fitness3": {
-    "name": "fitness3",
-    "type": "Personal trainings",
-    "sportFacilityId": "3",
-    "durationInMinutes": 60,
-    "trainerId": "trenercina",
-    "description": "MASAAA",
-    "deleted": false,
-    "imageName": "images/personalTraining.png"
-  },
   "hit i grit": {
     "name": "hit i grit",
     "type": "Group trainings",
-    "sportFacilityId": "3",
+    "sportFacilityId": "4",
     "durationInMinutes": 90,
-    "trainerId": "trenercina",
+    "trainerId": "trainer",
     "description": "MASAAA",
     "deleted": false,
-    "imageName": "images/personalTraining.png"
+    "imageName": "images/groupTraining.png"
   }
 }
