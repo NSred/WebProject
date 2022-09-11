@@ -154,7 +154,7 @@ Vue.component("admin-createFacility", {
 				 location  : facility.location , averageGrade : 0.0, openTime : facility.openTime, closeTime : facility.closeTime, imageName : "images/gym.png"}
 				axios
 		          .post('rest/sportFacilities/', f)
-		          .then(response => alert("Uspesno kreiran FACILITY MRTVI"))
+		          .then(response => alert("Uspesno kreiran FACILITY "))
 		          .catch(error =>  {
 							alert(error.message + " GRESKA U REGISTROVANJU FACILITIJA");
 						})

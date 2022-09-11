@@ -15,7 +15,7 @@
     "trainingId": "fitness",
     "customerId": "kast",
     "trainerId": "trainer",
-    "deleted": false
+    "deleted": true
   },
   "4": {
     "id": "4",
@@ -60,7 +60,7 @@
     "trainingId": "body balans",
     "customerId": "cs",
     "trainerId": "trener",
-    "deleted": false
+    "deleted": true
   },
   "9": {
     "id": "9",

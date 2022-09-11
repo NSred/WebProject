@@ -85,7 +85,7 @@ public class DueService  {
 
     
     @POST
-    @Path("/")
+    @Path("/") //putanja; na ovom URL se moze izvrsiti ova funkcija
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public void createDue(DueDTO dueDTO) {
